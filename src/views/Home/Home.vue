@@ -1,7 +1,26 @@
 <script setup lang="ts">
-    import {avatarUrl} from '../../utils/urls'
-    import Module from './Module.vue'
-    import BlogCard from './BlogCard.vue'
+    import {
+        onBeforeMount,
+        reactive
+    } from 'vue'
+
+    import Profile from './Profile.vue'
+    import Blogs from './Blogs.vue'
+
+    import {getProfile, getCategories} from '../../services/home'
+
+    const state = reactive({
+        profile: {},
+        categories: []
+    })
+
+    onBeforeMount(async function() {
+        state.profile = await getProfile()
+    })
+
+    onBeforeMount(async function() {
+        state.categories = await getCategories()
+    })
 </script>
 
 <template>
@@ -13,27 +32,10 @@
     </div>
     <div class="bottom">
         <div class="profile">
-            <div class="content">
-                <div><img class="avatar" :src="avatarUrl" ></div>
-                 <div class="name">张玥卿云</div>
-                 <div class="pick-name">zhangyueqingyun@foxmail.com</div>
-                 <div class="feeling">
-                    <div class="ch">追梦,成为世界一流的程序员</div>
-                    <div class="eng">Chasing my dream. To be the best programmer all over the world.</div>
-                 </div>
-            </div>
+            <profile :profile="state.profile"></profile>
         </div>
         <div class="blogs">
-            <module>
-                <template v-slot:left>技术</template>
-                <template v-slot:default>
-                    <blog-card
-                        date="2022-06-21 10:24:00"
-                        title="几句话说清浏览器渲染过程"
-                        desc="Webkit 是 Safari 浏览器的内核（渲染引擎），由苹果公司开发，负责将网页数据渲染为图像。 "
-                    ></blog-card>
-                </template>
-            </module>
+           <blogs :categories="state.categories"></blogs>
         </div>
     </div>
 </template>
@@ -49,11 +51,11 @@
         margin-left: 30px;
     }
     .top {
-        padding-top: 24px;
         border: 1px solid rgb(216, 222, 228);
         display: flex;
         justify-content: center;
         padding: 0 50px;
+        padding-top: 24px;
         .block {
             @extend .left-panel;
         }
@@ -82,40 +84,6 @@
         .profile {
             @extend .left-panel;
             background-color: white;
-            .content {
-                margin-top: -32px;
-                .avatar {
-                    width: 296px;
-                    height: 296px;
-                    border-radius: 50%;
-                    border: 1px solid #d0d7de;
-                    background: white;
-                }
-                .name {
-                    font-size: 24px;
-                }
-
-                .pick-name {
-                    color: #57606a;
-                    font-size: 18px;
-                    font-weight: 300;
-                }
-
-                .feeling {
-                    margin-top: 24px;
-                    .eng {
-                        color: #57606a;
-                        font-size: 14px;
-                        font-weight: 300;
-                        background: #f6f8fa;
-                        border: 1px solid rgba(27,31,36,0.15);
-                        padding: 10px;
-                        border-radius: 4px;
-                        margin-top: 10px;
-                        word-break: break-all;
-                    }
-                }
-            }
         }
 
         .blogs {

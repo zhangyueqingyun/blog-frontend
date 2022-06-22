@@ -1,26 +1,24 @@
 <script setup lang="ts">
-    const {title, desc, date} = defineProps({
-        title: String,
-        desc: String,
-        date: String
+    const {blog = {}} = defineProps({
+        blog: Object
     })
 </script>
 
 <template>
     <div class="card">
         <div class="header">
-            <div class="title">{{title}}</div>
+            <div class="title">{{blog?.title}}</div>
             <div class="sign">标签</div>
         </div>
         <div class="content">
-            {{desc}}
+            {{blog?.description}}
         </div>
         <div class="footer">
             <div class="sign">
                 <div class="circle"></div>
                 <div class="text">浏览器</div>
             </div>
-            <div class="date">{{date}}</div>
+            <div class="date">{{blog?.date}}</div>
         </div>
     </div>
 </template>
