@@ -1,7 +1,15 @@
 <script setup lang="ts">
+    import {computed} from 'vue'
+    
     const {blog = {}} = defineProps({
         blog: Object
     })
+
+    const datetime = computed(() => {
+        const date = new Date(blog?.datetime)
+        return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
+    })
+
 </script>
 
 <template>
@@ -14,11 +22,11 @@
             {{blog?.description}}
         </div>
         <div class="footer">
-            <div class="sign">
-                <div class="circle"></div>
-                <div class="text">浏览器</div>
+            <div class="sign" v-for="sign of blog?.signs" :key="sign.id">
+                <div class="circle" :style="{background: sign?.icon}"></div>
+                <div class="text">{{sign?.name}}</div>
             </div>
-            <div class="date">{{blog?.datetime}}</div>
+            <div class="date">{{datetime}}</div>
         </div>
     </div>
 </template>
