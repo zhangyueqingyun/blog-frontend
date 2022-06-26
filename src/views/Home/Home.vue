@@ -7,11 +7,11 @@
     import Profile from './Profile.vue'
     import Blogs from './Blogs.vue'
 
-    import {getProfile, getCategories} from '../../services/home'
+    import {getProfile, getCategoriedBlogs} from '../../services/home'
 
     const state = reactive({
         profile: {},
-        categories: []
+        categoriedBlogs: []
     })
 
     onBeforeMount(async function() {
@@ -19,8 +19,9 @@
     })
 
     onBeforeMount(async function() {
-        state.categories = await getCategories()
+        state.categoriedBlogs = await getCategoriedBlogs()
     })
+    console.log(state)
 </script>
 
 <template>
@@ -35,7 +36,7 @@
             <profile :profile="state.profile"></profile>
         </div>
         <div class="blogs">
-           <blogs :categories="state.categories"></blogs>
+           <blogs :categoriedBlogs="state.categoriedBlogs"></blogs>
         </div>
     </div>
 </template>

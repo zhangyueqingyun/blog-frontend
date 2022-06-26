@@ -2,13 +2,13 @@
     import Module from './components/Module.vue'
     import BlogCard from './components/BlogCard.vue'
 
-    const {categories}:  any= defineProps({
-        categories: Array
+    const {categoriedBlogs}:  any= defineProps({
+        categoriedBlogs: Array
     })
 </script>
 
 <template>
-  <module v-for="category of categories" :key="category.id">
+  <module v-for="category of categoriedBlogs" :key="category.id">
         <template v-slot:left>{{category.name}}</template>
         <template v-slot:default>
             <blog-card

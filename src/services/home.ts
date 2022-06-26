@@ -4,6 +4,6 @@ export async function getProfile() {
     return get('profile')
 }
 
-export async function getCategories() {
-    return get('categories')
+export async function getCategoriedBlogs() {
+    return get('news')
 }

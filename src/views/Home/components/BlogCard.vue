@@ -18,7 +18,7 @@
                 <div class="circle"></div>
                 <div class="text">浏览器</div>
             </div>
-            <div class="date">{{blog?.date}}</div>
+            <div class="date">{{blog?.datetime}}</div>
         </div>
     </div>
 </template>
