@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "start": "vite --mode mock",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "mockjs": "^1.1.0",
+    "vite-plugin-mock": "^2.9.6",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16"
   },
