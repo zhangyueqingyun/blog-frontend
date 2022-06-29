@@ -21,7 +21,6 @@
     onBeforeMount(async function() {
         state.categoriedBlogs = await getCategoriedBlogs()
     })
-    console.log(state)
 </script>
 
 <template>
@@ -70,6 +69,12 @@
                 margin-left: 5px;
                 border: 2px solid transparent;
                 padding: 0 3px;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #555;
+                }
             }
             .active {
                 border-bottom: 2px solid #fd8c73;

@@ -52,6 +52,12 @@
                 color: #0969da;
                 font-size: 14px;
                 font-weight: 600;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #248adc;
+                }
             }
             .sign {
                 padding: 0 7px;
