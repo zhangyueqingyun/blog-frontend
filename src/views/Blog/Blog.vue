@@ -1,26 +1,31 @@
 <script setup lang="ts">
-import {reactive, onBeforeMount} from 'vue'
-// @ts-ignore
-import MarkDown from 'vue3-markdown-it';
-import {getBlogById} from '../../services/blog'
+    import {reactive, onBeforeMount} from 'vue'
+    import {useRoute} from 'vue-router'
+    // @ts-ignore
+    import MarkDown from 'vue3-markdown-it';
+    import {getBlogById} from '../../services/blog'
+    import {format} from '../../utils/date'
 
-const state:any = reactive({
-    blog: {}
-})
+    const route = useRoute()
+
+    const state: any = reactive({
+        blog: {}
+    })
 
     onBeforeMount(async function() {
-        state.blog = await getBlogById(0)
+        state.blog = await getBlogById(route.params.id)
     })
+
 </script>
 
 <template>
     <div class="blog">
         <div class="title">
             <div>{{state.blog.title}}.md</div>
-            <div>{{state.blog.date}}</div>
+            <div>{{format(state.blog.datetime)}}</div>
         </div>
         <div class="content">
-            <mark-down :source="state.blog.md"></mark-down>
+            <mark-down :source="state.blog.content"></mark-down>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 import {get} from '../utils/request'
 
 export async function getCategoriedBlogs() {
-    return get('news')
+    return get('blog/news')
 }

@@ -1,15 +1,9 @@
 <script setup lang="ts">
-    import {computed} from 'vue'
+    import {format} from '../../../utils/date'
     
     const {blog = {}} = defineProps({
         blog: Object
     })
-
-    const datetime = computed(() => {
-        const date = new Date(blog?.datetime)
-        return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
-    })
-
 </script>
 
 <template>
@@ -26,7 +20,7 @@
                 <div class="circle" :style="{background: sign?.icon}"></div>
                 <div class="text">{{sign?.name}}</div>
             </div>
-            <div class="date">{{datetime}}</div>
+            <div class="date">{{format(blog?.datetime)}}</div>
         </div>
     </div>
 </template>
