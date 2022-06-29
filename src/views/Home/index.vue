@@ -1,100 +1,32 @@
 <script setup lang="ts">
-    import {
-        onBeforeMount,
-        reactive
-    } from 'vue'
-
-    import Profile from './Profile.vue'
+    import BasicLayout from '../../layout/BasicLayout.vue'
     import Blogs from './Blogs.vue'
-
-    import {getProfile, getCategoriedBlogs} from '../../services/home'
-
-    const state = reactive({
-        profile: {},
-        categoriedBlogs: []
-    })
-
-    onBeforeMount(async function() {
-        state.profile = await getProfile()
-    })
-
-    onBeforeMount(async function() {
-        state.categoriedBlogs = await getCategoriedBlogs()
-    })
 </script>
 
 <template>
-    <div class="top">
-        <div class="block"></div>
-        <div class="tabs">
+    <basic-layout>
+        <template v-slot:nav>
             <div class="item active">最新发布</div>
-        </div>
-    </div>
-    <div class="bottom">
-        <div class="profile">
-            <profile :profile="state.profile"></profile>
-        </div>
-        <div class="blogs">
-           <blogs :categoriedBlogs="state.categoriedBlogs"></blogs>
-        </div>
-    </div>
+        </template>
+        <template v-slot>
+            <blogs></blogs>
+        </template>
+    </basic-layout>
 </template>
 
-<style scoped lang="scss">
-    .left-panel {
-         width: 296px;
-    }
-    .right-panel {
-        min-width: 300px;
-        max-width: 1000px;
-        flex: 1 0;
-        margin-left: 30px;
-    }
-    .top {
-        border: 1px solid rgb(216, 222, 228);
-        display: flex;
-        justify-content: center;
-        padding: 0 50px;
-        padding-top: 24px;
-        .block {
-            @extend .left-panel;
-        }
-        .tabs {
-            @extend .right-panel;
-            height : 48px;
-            line-height: 48px;
-            display: flex;
+<style lang="scss">
+    .item {
+        margin-left: 5px;
+        border: 2px solid transparent;
+        padding: 0 3px;
+        cursor: pointer;
+        transition: color 0.3s;
 
-            .item {
-                margin-left: 5px;
-                border: 2px solid transparent;
-                padding: 0 3px;
-                cursor: pointer;
-                transition: color 0.3s;
-
-                &:hover {
-                    color: #555;
-                }
-            }
-            .active {
-                border-bottom: 2px solid #fd8c73;
-            }
-
+        &:hover {
+            color: #555;
         }
     }
-
-    .bottom {
-        display: flex;
-        justify-content: center;
-        padding: 0 50px;
-        .profile {
-            @extend .left-panel;
-            background-color: white;
-        }
-
-        .blogs {
-            @extend .right-panel;
-        }
+    .active {
+        border-bottom: 2px solid #fd8c73;
     }
-
 </style>

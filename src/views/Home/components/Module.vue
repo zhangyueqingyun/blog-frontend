@@ -1,13 +1,7 @@
-<script setup lang="ts">
-    const {left} = defineProps({
-        left: String
-    })
-</script>
-
 <template>
     <div class="module">
          <div class="header">
-            <div class="left"><slot name="left"></slot></div>
+            <div class="title"><slot name="top"></slot></div>
             <!-- <div class="right">更多</div> -->
         </div>
         <div>

@@ -1,18 +1,19 @@
 <script setup lang="ts">
-    const {profile} = defineProps({
-        profile: Object
-    })
+    import {inject} from 'vue'
+    const profile: any = inject('profile')
 </script>
 
 <template>
     <div class="content">
-        <div><img class="avatar" :src="profile?.avatar" ></div>
-            <div class="name">{{profile?.name}}</div>
-            <div class="pick-name">{{profile?.mail}}</div>
-            <div class="feeling">
+        <div>
+            <img class="avatar" :src="profile?.avatar" >
+        </div>
+        <div class="name">{{profile?.name}}</div>
+        <div class="pick-name">{{profile?.mail}}</div>
+        <div class="feeling">
             <div class="ch">{{profile?.feeling?.ch}}</div>
             <div class="en">{{profile?.feeling?.en}}</div>
-            </div>
+        </div>
     </div>
 </template>
 

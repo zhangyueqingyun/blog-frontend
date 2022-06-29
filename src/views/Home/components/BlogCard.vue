@@ -15,7 +15,7 @@
 <template>
     <div class="card">
         <div class="header">
-            <div class="title">{{blog?.title}}</div>
+            <router-link to="/blog"><div class="title">{{blog?.title}}</div></router-link>
             <div class="sign">标签</div>
         </div>
         <div class="content">
@@ -54,6 +54,7 @@
                 font-weight: 600;
                 cursor: pointer;
                 transition: color 0.3s;
+                text-decoration: none;
 
                 &:hover {
                     color: #248adc;

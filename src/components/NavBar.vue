@@ -43,6 +43,8 @@
           font-weight: 500;
           font-size: 16px;
           margin-right: 15px;
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
       }
       .item:hover {
         color: $nav-hover-color;

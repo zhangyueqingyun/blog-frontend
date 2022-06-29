@@ -1,15 +1,21 @@
 <script setup lang="ts">
-    import Module from './components/Module.vue'
+    import {onBeforeMount, reactive} from 'vue'
     import BlogCard from './components/BlogCard.vue'
+    import Module from './components/Module.vue'
+    import {getCategoriedBlogs} from '../../services/home'
 
-    const {categoriedBlogs}:  any= defineProps({
-        categoriedBlogs: Array
+    const state:any = reactive({
+        categoriedBlogs: []
+    })
+
+    onBeforeMount(async function() {
+        state.categoriedBlogs = await getCategoriedBlogs()
     })
 </script>
 
 <template>
-  <module v-for="category of categoriedBlogs" :key="category.id">
-        <template v-slot:left>{{category.name}}</template>
+  <module v-for="category of state.categoriedBlogs" :key="category?.id">
+        <template v-slot:top>{{category.name}}</template>
         <template v-slot:default>
             <blog-card
                 v-for="blog of category?.blogs"
