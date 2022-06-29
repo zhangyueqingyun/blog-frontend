@@ -1,13 +1,27 @@
 <script setup lang="ts">
+import {reactive, onBeforeMount} from 'vue'
+// @ts-ignore
+import MarkDown from 'vue3-markdown-it';
+import {getBlogById} from '../../services/blog'
+
+const state:any = reactive({
+    blog: {}
+})
+
+    onBeforeMount(async function() {
+        state.blog = await getBlogById(0)
+    })
 </script>
 
 <template>
     <div class="blog">
         <div class="title">
-            <div>几句话说清浏览器的渲染过程.md</div>
-            <div>2022-06-21</div>
+            <div>{{state.blog.title}}.md</div>
+            <div>{{state.blog.date}}</div>
         </div>
-        <div class="content">内容</div>
+        <div class="content">
+            <mark-down :source="state.blog.md"></mark-down>
+        </div>
     </div>
 </template>
 

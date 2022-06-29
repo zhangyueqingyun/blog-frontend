@@ -9,11 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/markdown-it": "*",
     "axios": "^0.27.2",
+    "markdown-it": "^13.0.1",
     "mockjs": "^1.1.0",
     "vite-plugin-mock": "^2.9.6",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "vue3-markdown-it": "^1.0.10"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

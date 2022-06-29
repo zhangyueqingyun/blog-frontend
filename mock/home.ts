@@ -14,5 +14,19 @@ export default [
     response: ({ query }) => {
       return {"code":20000,"message":"success","data":{"id":1,"name":"张玥卿云","avatar":"https://zblog-images.oss-cn-hangzhou.aliyuncs.com/avatar.jpeg","mail":"zhangyueqingyun@foxmail.com","feeling":{"ch":"追梦,成为世界一流的程序员","en":"Chasing my dream, to be the best programmer all over the world."}}};
     },
+    
   },
+  {
+    url: '/api/blog',
+    method: 'get',
+    response: ({ query }) => {
+      return {"code":20000,"message":"success","data": {
+        id: 0,
+        title: '几句话说清浏览器的渲染过程',
+        description: '描述',
+        date: '2022/06/49',
+        md: "# 几句话说清浏览器的渲染过程"
+      }};
+    },
+  }
 ] as MockMethod[];
