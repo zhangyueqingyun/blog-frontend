@@ -15,7 +15,7 @@
 <template>
     <div class="card">
         <div class="header">
-            <router-link to="/blog"><div class="title">{{blog?.title}}</div></router-link>
+            <router-link :to="`/blog/${blog.id}`"><div class="title">{{blog?.title}}</div></router-link>
             <div class="sign">标签</div>
         </div>
         <div class="content">
