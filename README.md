@@ -13,3 +13,7 @@ pnpm start
 ~~~javascript
 pnpm dev
 ~~~
+运行测试
+~~~javascript
+pnpm test
+~~~
