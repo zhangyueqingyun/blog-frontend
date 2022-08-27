@@ -1,16 +1,17 @@
 <script setup lang="ts">
-    import {onBeforeMount, reactive} from 'vue'
-    import BlogCard from './components/BlogCard.vue'
-    import Module from './components/Module.vue'
-    import {getCategoriedBlogs} from '../../services/home'
+    import BlogCard from './components/BlogCard.vue';
+    import Module from './components/Module.vue';
+    import {getCategoriedBlogs} from '../../services/home';
 
-    const state:any = reactive({
+    import { onBeforeMount, reactive } from 'vue';
+    
+    const state: any = reactive({
         categoriedBlogs: []
-    })
+    });
 
     onBeforeMount(async function() {
         state.categoriedBlogs = await getCategoriedBlogs()
-    })
+    });
 </script>
 
 <template>

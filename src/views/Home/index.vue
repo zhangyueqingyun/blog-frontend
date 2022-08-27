@@ -1,20 +1,44 @@
 <script setup lang="ts">
-    import BasicLayout from '../../layout/BasicLayout.vue'
-    import Blogs from './Blogs.vue'
+    import BasicLayout from '../../layout/BasicLayout.vue';
+    import Blogs from './Blogs.vue';
+    import Cate from '../Cate/index.vue';
+    import { getNav } from '../../services/home';
+
+    import { reactive, onBeforeMount } from 'vue';
+
+    const data: any = reactive({
+        active: 'news',
+        navs: []
+    });
+
+    function handleTabClick (name: string) {
+        data.active = name;
+    }
+
+    onBeforeMount(async function () {
+        data.navs = await getNav();
+    })
 </script>
 
 <template>
     <basic-layout>
         <template v-slot:nav>
-            <div class="item active">最新发布</div>
-            <div class="item">大前端</div>
-            <div class="item">计算机</div>
-            <div class="item">系统设计</div>
-            <div class="item">项目管理</div>
-            <div class="item">学习日记</div>
+            <div 
+                class="item"
+                :class="{active: data.active == 'news'}"
+                @click="handleTabClick('news')"
+            >最新发布</div>
+            <div v-for="nav of data.navs"
+                class="item"
+                :class="{active: data.active == nav.id}"
+                @click="handleTabClick(nav.id)"
+            >{{ nav.name }}</div>
         </template>
         <template v-slot>
-            <blogs></blogs>
+            <keep-alive>
+                <blogs v-if="data.active == 'news'" />
+                <cate v-else />
+            </keep-alive>
         </template>
     </basic-layout>
 </template>
@@ -32,7 +56,6 @@
             color: #000;
         }
     }
-
     .active {
         border-bottom: 2px solid #fd8c73;
         color: #000;

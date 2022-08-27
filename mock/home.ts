@@ -2,6 +2,34 @@ import { MockMethod } from 'vite-plugin-mock';
 
 export default [
   {
+    url: '/api/nav',
+    method: 'get',
+    response: () => ({
+      "code": 20000,
+      "message": "success",
+      "data": [{
+        id: 0,
+        name: "大前端",
+      },
+      {
+        id: 1,
+        name: "计算机",
+      },
+      {
+        id: 2,
+        name: "系统设计",
+      },
+      {
+        id: 3,
+        name: "项目管理",
+      },
+      {
+        id: 4,
+        name: "学习日记",
+      }]
+    })
+  },
+  {
     url: '/api/blog/news',
     method: 'get',
     response: ({ query }) => {
