@@ -5,7 +5,7 @@ export default [
     url: '/api/blog/news',
     method: 'get',
     response: ({ query }) => {
-      return {"code":20000,"message":"success","data":[{"id":0,"name":"技术","icon":null,"blogs":[{"id":0,"title":"几句话说清浏览器渲染过程","description":"Webkit 是 Safari 浏览器的内核（渲染引擎），由苹果公司开发，负责将网页数据渲染为图像。","ossPath":"几句话说清Webkit渲染过程.md","datetime":"2022-06-26T02:24:00.000Z","signs":[{"id":1,"name":"Git","icon":"yellow"}]}]},{"id":1,"name":"踩坑记录","icon":null,"blogs":[{"id":1,"title":"开启clash后，连接不上Github仓库","description":"Git 配置 Proxy 问题","ossPath":"开启clash后，连接不上Github仓库.md","datetime":"2022-06-25T02:19:48.000Z","signs":[{"id":0,"name":"Webkit","icon":"blue"}]}]},{"id":2,"name":"感悟","icon":null,"blogs":[{"id":2,"title":"菜鸟前端的五年感悟","description":"对前端的一些感悟","ossPath":"菜鸟前端的五年感悟.md","datetime":"2022-06-26T02:19:51.000Z","signs":[{"id":0,"name":"Webkit","icon":"blue"}]}]}]};
+      return {"code":20000,"message":"success","data":[{"id":0,"name":"大前端","icon":null,"blogs":[{"id":0,"title":"几句话说清浏览器渲染过程","description":"Webkit 是 Safari 浏览器的内核（渲染引擎），由苹果公司开发，负责将网页数据渲染为图像。","ossPath":"几句话说清Webkit渲染过程.md","datetime":"2022-06-26T02:24:00.000Z","signs":[{"id":1,"name":"Git","icon":"yellow"}]}]},{"id":1,"name":"计算机","icon":null,"blogs":[{"id":1,"title":"开启clash后，连接不上Github仓库","description":"Git 配置 Proxy 问题","ossPath":"开启clash后，连接不上Github仓库.md","datetime":"2022-06-25T02:19:48.000Z","signs":[{"id":0,"name":"Webkit","icon":"blue"}]}]},{"id":2,"name":"学习日记","icon":null,"blogs":[{"id":2,"title":"菜鸟前端的五年感悟","description":"对前端的一些感悟","ossPath":"菜鸟前端的五年感悟.md","datetime":"2022-06-26T02:19:51.000Z","signs":[{"id":0,"name":"Webkit","icon":"blue"}]}]}]};
     },
   },
   {
