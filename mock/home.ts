@@ -10,10 +10,10 @@ export default [
         case '0':
           data = {
             categories: [
-              {id:0, type: 'category', name: "基础"},
-              {id:1, type: 'category', name: "应用"},
-              {id:2, type: 'category', name: "基建"},
-              {id:3, type: 'file', name: "几句话说清浏览器渲染过程.md"},
+              {id:1, type: 'category', name: "基础"},
+              {id:2, type: 'category', name: "应用"},
+              {id:3, type: 'category', name: "基建"},
+              {id:0, type: 'file', name: "几句话说清浏览器渲染过程.md"},
             ],
             blogs: [{"id":0,"title":"几句话说清浏览器渲染过程","description":"Webkit 是 Safari 浏览器的内核（渲染引擎），由苹果公司开发，负责将网页数据渲染为图像。","ossPath":"几句话说清Webkit渲染过程.md","datetime":"2022-06-26T02:24:00.000Z","signs":[{"id":1,"name":"Git","icon":"yellow"}]},{"id":1,"title":"开启clash后，连接不上Github仓库","description":"Git 配置 Proxy 问题","ossPath":"开启clash后，连接不上Github仓库.md","datetime":"2022-06-25T02:19:48.000Z","signs":[{"id":0,"name":"Webkit","icon":"blue"}]}]
           }
