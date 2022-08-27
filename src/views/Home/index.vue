@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import BasicLayout from '../../layout/BasicLayout.vue';
-    import Blogs from './Blogs.vue';
-    import Cate from '../Cate/index.vue';
+    import News from './News.vue';
+    import Categories from './Categories.vue';
     import { getNav } from '../../services/home';
 
     import { reactive, onBeforeMount } from 'vue';
@@ -11,8 +11,8 @@
         navs: []
     });
 
-    function handleTabClick (name: string) {
-        data.active = name;
+    function handleTabClick (tab: any) {
+        data.active = tab;
     }
 
     onBeforeMount(async function () {
@@ -30,14 +30,14 @@
             >最新发布</div>
             <div v-for="nav of data.navs"
                 class="item"
-                :class="{active: data.active == nav.id}"
-                @click="handleTabClick(nav.id)"
+                :class="{active: data.active == nav}"
+                @click="handleTabClick(nav)"
             >{{ nav.name }}</div>
         </template>
         <template v-slot>
             <keep-alive>
-                <blogs v-if="data.active == 'news'" />
-                <cate v-else />
+                <news v-if="data.active == 'news'" />
+                <categories v-else :nav="data.active" />
             </keep-alive>
         </template>
     </basic-layout>
