@@ -6,7 +6,21 @@
 <template>
       <basic-layout>
         <template v-slot:nav>
-            <div class="item active">技术</div>
+            <div class="item">首页</div>
+            <div class="divide">/</div>
+            <div class="item">大前端</div>
+            
+            <div class="divide">/</div>
+            <div class="item">基础</div>
+            
+            <div class="divide">/</div>
+            <div class="item">浏览器</div>
+            
+            <div class="divide">/</div>
+            <div class="item">原理</div>
+            
+            <div class="divide">/</div>
+            <div class="item">几句话说清浏览器渲染过程.md</div>
         </template>
         <template v-slot>
             <blog></blog>
@@ -16,9 +30,8 @@
 
 <style lang="scss">
     .item {
-        margin-left: 5px;
         border: 2px solid transparent;
-        padding: 0 7px;
+        padding: 0;
         cursor: pointer;
         transition: color 0.3s;
 
@@ -26,7 +39,11 @@
             color: #555;
         }
     }
-    .active {
-        border-bottom: 2px solid #fd8c73;
+    .divide {
+        border: 2px solid transparent;
+        padding: 0 5px;
+        cursor: default;
+        transition: color 0.3s;
+        color: #777;
     }
 </style>
