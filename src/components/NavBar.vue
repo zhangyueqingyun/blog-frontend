@@ -16,11 +16,14 @@
     </div>
     <div class="right-bar">
       <div class="item">
-        <a :href="githubUrl"><git-hub-icon></git-hub-icon></a>
+        <a :href="githubUrl">
+          <svg-icon 
+            name="github" 
+            color="white" 
+            size="22" 
+          />
+        </a>
       </div>
-      <!-- <div class="item">
-        <img class="icon" :src="wechatIconUrl" >
-      </div> -->
     </div>
   </nav>
 </template>
@@ -62,10 +65,6 @@
       .item {
         margin-left: 15px;
         cursor: pointer;
-        .icon {
-          height: 22px;
-          width: 22px;
-        }
       }
     }
   }

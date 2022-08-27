@@ -56,7 +56,7 @@
     .content {
         margin-top: 30px;
         .categories {
-            padding: 16px;
+            padding: 10px;
             border-radius: 6px;
             border-width: 1px;
             border-style:  solid;

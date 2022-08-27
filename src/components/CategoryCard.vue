@@ -2,20 +2,36 @@
     const {category = {}}: any = defineProps({
         category: Object
     });
+
+    import {computed} from 'vue';
+    const icon = computed(() => (category.type === 'category' ? 
+        {name: "directory", color:"#54aeff"} : 
+        {name: "file", color:"#57606a"}
+    ))
 </script>
 
 <template>
-    <div class="category">{{ category?.name }}</div>
+    <div class="category">
+        <svg-icon :name="icon.name" :color="icon.color" />
+        <span class="name">{{ category?.name }}</span>
+    </div>
 </template>
 
 <style lang="scss" scoped>
     .category {
-        // border-radius: 6px;
-        // border-width: 1px;
-        // border-style:  solid;
-        // border-color: #d0d7de;
+        display: flex;
         border-bottom: 1px solid #d0d7de;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
+        padding-bottom: 9px;
+        margin-bottom: 9px;
+        font-size: 14px;
+        align-items: center;
+        .name {
+            margin-left: 8px;
+            cursor: pointer;
+            transition: color 0.3s;
+            &:hover {
+                color: #777;
+            }
+        }
     }
 </style>

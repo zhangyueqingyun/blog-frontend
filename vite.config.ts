@@ -1,5 +1,6 @@
 import { UserConfigExport } from 'vite'
 import { viteMockServe } from 'vite-plugin-mock'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
@@ -12,6 +13,10 @@ export default  ({mode}): UserConfigExport=>{
         mockPath: 'mock',
         localEnabled: mode === 'mock'
 
+      }),
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(__dirname,'src/assets')],
+        symbolId: 'icon-[name]'
       })
     ],
     resolve: {

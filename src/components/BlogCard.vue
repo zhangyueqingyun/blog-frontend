@@ -31,8 +31,8 @@
         border-width: 1px;
         border-style:  solid;
         border-color: #d0d7de;
-        height: 160px;
-        padding: 16px;
+        height: 100px;
+        padding: 12px;
         box-sizing:border-box;
         display: flex;
         flex-direction: column;
