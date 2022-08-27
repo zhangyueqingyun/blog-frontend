@@ -19,9 +19,9 @@
     </basic-layout>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .item {
-        margin-left: 5px;
+        margin-right: 10px;
         border: 2px solid transparent;
         padding: 0 3px;
         cursor: pointer;

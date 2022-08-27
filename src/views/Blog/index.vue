@@ -6,21 +6,21 @@
 <template>
       <basic-layout>
         <template v-slot:nav>
-            <div class="item">首页</div>
+            <div class="item home">首页</div>
             <div class="divide">/</div>
-            <div class="item">大前端</div>
+            <div class="item cate">大前端</div>
             
             <div class="divide">/</div>
-            <div class="item">基础</div>
+            <div class="item cate">基础</div>
             
             <div class="divide">/</div>
-            <div class="item">浏览器</div>
+            <div class="item cate">浏览器</div>
             
             <div class="divide">/</div>
-            <div class="item">原理</div>
+            <div class="item cate">原理</div>
             
             <div class="divide">/</div>
-            <div class="item">几句话说清浏览器渲染过程.md</div>
+            <div class="item article">几句话说清浏览器渲染过程.md</div>
         </template>
         <template v-slot>
             <blog></blog>
@@ -28,16 +28,26 @@
     </basic-layout>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .item {
         border: 2px solid transparent;
         padding: 0;
-        cursor: pointer;
         transition: color 0.3s;
-
+        margin: 0;
+        cursor: default;
+        color: #333;
+    
         &:hover {
             color: #555;
         }
+    }
+    .home {
+        color: #666;
+        cursor: pointer;
+    }
+    .cate {
+        color: #666;
+        cursor: pointer;
     }
     .divide {
         border: 2px solid transparent;

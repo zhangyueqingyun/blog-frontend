@@ -43,22 +43,6 @@ import Profile from '../components/Profile.vue'
             height : 48px;
             line-height: 48px;
             display: flex;
-
-            .item {
-                margin-left: 5px;
-                border: 2px solid transparent;
-                padding: 0 3px;
-                cursor: pointer;
-                transition: color 0.3s;
-
-                &:hover {
-                    color: #555;
-                }
-            }
-            .active {
-                border-bottom: 2px solid #fd8c73;
-            }
-
         }
     }
 
