@@ -9,8 +9,10 @@
 <template>
   <nav class="nav">
     <div class="left-bar">
-      <router-link to="/"><span class="item">首页</span> </router-link>
-      <!-- <span class="item">博文</span> -->
+      <router-link to="/">
+        <span class="item go-home">zblog</span> 
+      </router-link>
+      <span class="item">@zhangyueqingyun</span>
     </div>
     <div class="right-bar">
       <div class="item">
@@ -27,7 +29,7 @@
 
   $nav-bg: #24292f;
   $nav-color: rgba(255, 255, 255, 0.7);
-  $nav-hover-color: rgba(255, 255, 255, .9);
+  $nav-hover-color: rgba(255, 255, 255, .8);
   .nav {
     background:  $nav-bg;
     padding: 16px 24px;
@@ -38,16 +40,20 @@
     .left-bar {
       color: $nav-color;
       .item {
-          cursor: pointer;
+          cursor: default;
           transition: color 0.3s;
           font-weight: 500;
           font-size: 16px;
-          margin-right: 15px;
+          margin-right: 3px;
+          margin-left: 0;
+          padding: 0;
           color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
       }
-      .item:hover {
-        color: $nav-hover-color;
+
+      .go-home {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.8);
       }
     }
     .right-bar {
