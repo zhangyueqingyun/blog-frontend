@@ -1,9 +1,10 @@
 <script setup lang="ts">
+    import {computed} from 'vue';
+
     const {category = {}}: any = defineProps({
         category: Object
     });
 
-    import {computed} from 'vue';
     const icon = computed(() => (category.type === 'category' ? 
         {name: "directory", color:"#54aeff"} : 
         {name: "file", color:"#57606a"}
@@ -21,13 +22,11 @@
             :color="icon.color"
         />
         
-            <router-link 
-                :to="url">
-        <span class="name">
+        <router-link :to="url">
+            <span class="name">
                 {{ category?.name }}
-        </span>
-        
-            </router-link>
+            </span>
+        </router-link>
     </div>
 </template>
 
