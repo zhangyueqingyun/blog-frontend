@@ -1,7 +1,7 @@
 <script setup lang="ts">
-    import BlogCard from '../../components/BlogCard.vue';
-    import Module from './components/Module.vue';
-    import { getNews } from '../../services/home';
+    import BlogCard from '@/components/BlogCard.vue';
+    import Module from '@/components/Module.vue';
+    import { getNews } from '@/services/home';
 
     import { onBeforeMount, reactive } from 'vue';
     
@@ -10,7 +10,7 @@
     });
 
     onBeforeMount(async function() {
-        state.categoriedBlogs = await getNews()
+        state.categoriedBlogs = await getNews();
     });
 </script>
 

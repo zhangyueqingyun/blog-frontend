@@ -3,8 +3,8 @@
     import {useRoute} from 'vue-router'
     // @ts-ignore
     import MarkDown from 'vue3-markdown-it';
-    import {getBlogById} from '../../services/blog'
-    import {format} from '../../utils/date'
+    import {getBlogById} from '@/services/blog'
+    import {format} from '@/utils/date'
 
     const route = useRoute()
 

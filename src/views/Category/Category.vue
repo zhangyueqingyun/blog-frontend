@@ -5,9 +5,8 @@
     import { getCategoriesAndBlogs } from '@/services/home';
     import { onBeforeMount, reactive, watch, toRefs } from 'vue';
 
-    const props: any = defineProps({
-        nav: Object
-    })
+    import {useRoute} from 'vue-router'
+    const route: any = useRoute()
 
     const data: any = reactive({
         categories: [],
@@ -15,14 +14,12 @@
     });
 
     async function fetchCategoriesAndBlogs(){
-        const {categories, blogs} = await  getCategoriesAndBlogs(props.nav.id);
+        const {categories, blogs} = await  getCategoriesAndBlogs(route.params.id);
         data.categories = categories;
         data.blogs = blogs;
     }
 
     onBeforeMount(fetchCategoriesAndBlogs);
-
-    watch(props, fetchCategoriesAndBlogs);
 </script>
 
 <template>
