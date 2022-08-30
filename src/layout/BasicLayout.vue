@@ -21,10 +21,11 @@ import Profile from '../components/Profile.vue'
 
 <style scoped lang="scss">
     .left-panel {
-         width: 296px;
+        width: 296px; 
+        min-width: 296px;
     }
     .right-panel {
-        min-width: 300px;
+        min-width: 600px;
         max-width: 1000px;
         flex: 1 0;
         margin-left: 30px;
@@ -43,6 +44,7 @@ import Profile from '../components/Profile.vue'
             height : 48px;
             line-height: 48px;
             display: flex;
+            min-width: 600px;
         }
     }
 
