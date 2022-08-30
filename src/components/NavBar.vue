@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import GitHubIcon from '@/components/icons/GitHubIcon.vue'
   import {
     // wechatIconUrl,
      githubUrl

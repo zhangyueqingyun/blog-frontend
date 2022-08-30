@@ -1,5 +1,5 @@
 import {get} from '../utils/request'
 
-export async function getPathById(id: any) {
-    return get(`path/${id}`)
+export async function getPathById(type: String, id: any) {
+    return get(`${type}/path/${id}`)
 }

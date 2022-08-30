@@ -3,7 +3,7 @@
     import CategoryCard from '@/components/CategoryCard.vue';
     import BlogCard from '@/components/BlogCard.vue';
     import { getCategoriesAndBlogs } from '@/services/home';
-    import { onBeforeMount, reactive, watch, toRefs } from 'vue';
+    import { onBeforeMount, reactive, computed, watch } from 'vue';
 
     import {useRoute} from 'vue-router'
     const route: any = useRoute()
@@ -13,18 +13,22 @@
         blogs: []
     });
 
+    const showCategories = computed(() => !!data?.categories?.length);
+    const showBlogs = computed(() => !!data?.blogs?.length);
+
     async function fetchCategoriesAndBlogs(){
-        const {categories, blogs} = await  getCategoriesAndBlogs(route.params.id);
+        const categories = await  getCategoriesAndBlogs(route.params.id);
         data.categories = categories;
-        data.blogs = blogs;
+        data.blogs = categories.filter((category: any) => category.type == 'blog');
     }
 
     onBeforeMount(fetchCategoriesAndBlogs);
+    watch(() => route.params, fetchCategoriesAndBlogs);
 </script>
 
 <template>
     <div class="content">
-        <module>
+        <module v-if="showCategories" :key="`cate-${route.params.id}`">
             <template v-slot:top>目录</template>
             <template v-slot:default>
                 <div class="categories">
@@ -36,7 +40,7 @@
                 </div>
             </template>
         </module>
-        <module>
+        <module v-if="showBlogs" :key="`blog-${route.params.id}`">
             <template v-slot:top>文章</template>
             <template v-slot:default>        
                 <blog-card 

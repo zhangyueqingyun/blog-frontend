@@ -1,5 +1,5 @@
 import axios from 'axios' 
-const API_URL = 'http://localhost:8000'
+const API_URL = 'http://localhost:9000'
 const BASE_URL = import.meta.env.MODE == 'mock'? '' : API_URL
 
 function getResponseStatus(response: any) {

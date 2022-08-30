@@ -1,22 +1,30 @@
 <script setup lang="ts">
     import { useRoute } from 'vue-router'
     import { getPathById } from '@/services/path';
-    import { onBeforeMount, reactive } from 'vue';
+    import { onBeforeMount, reactive, watch } from 'vue';
     
-    const route = useRoute();
-    
+    const route: any = useRoute();
+
     const state: any = reactive({
         path: [],
         current: {}
     });
     
     async function fetchPath(){
-        const {path, current} = await getPathById(route.params.id);
-        state.path = path;
-        state.current = current;
+        if(route.name !== 'category' && route.name !== 'blog') {
+            stop();
+            return;
+        }
+        const path = await getPathById(route.name, route.params.id);
+        const {length} = path;
+        
+        state.current = path[length - 1];
+        state.path = path.slice(0, length - 1);
     }
 
     onBeforeMount(fetchPath);
+    const stop = watch(() => route.params, fetchPath);
+    watch(() => route.name, stop);
 </script>
 
 <template>
@@ -31,7 +39,7 @@
         <div class="divide">/</div>
     </template>
     <div class="item">{{state.current.name}}</div>
-    <div v-if="state.current.type === 'category'" class="divide">/</div>
+    <div v-if="route.name == 'category'" class="divide">/</div>
 </template>
 
 <style lang="scss" scoped>

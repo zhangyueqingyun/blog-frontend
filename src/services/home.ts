@@ -5,9 +5,9 @@ export async function getCategoriesAndBlogs(categoryId: string | number) {
 }
 
 export async function getNews() {
-    return get('blog/news');
+    return get('news');
 }
 
 export async function getNav() {
-    return get('nav');
+    return get('navigation');
 }

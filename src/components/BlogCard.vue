@@ -10,16 +10,16 @@
     <div class="card">
         <div class="header">
             <router-link :to="`/blog/${blog.id}`"><div class="title">{{blog?.title}}</div></router-link>
-            <div class="sign">标签</div>
+            <!-- <div class="sign">标签</div> -->
         </div>
         <div class="content">
             {{blog?.description}}
         </div>
         <div class="footer">
-            <div class="sign" v-for="sign of blog?.signs" :key="sign.id">
+            <!-- <div class="sign" v-for="sign of blog?.signs" :key="sign.id">
                 <div class="circle" :style="{background: sign?.icon}"></div>
                 <div class="text">{{sign?.name}}</div>
-            </div>
+            </div> -->
             <div class="date">{{format(blog?.datetime)}}</div>
         </div>
     </div>

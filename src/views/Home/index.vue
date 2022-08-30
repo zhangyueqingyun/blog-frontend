@@ -37,7 +37,7 @@
         <template v-slot>
             <keep-alive>
                 <news v-if="data.active == 'news'" />
-                <categories v-else :nav="data.active" />
+                <categories v-else :nav="data.active" :key="`${data?.active?.id}`" />
             </keep-alive>
         </template>
     </basic-layout>
