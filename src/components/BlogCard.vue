@@ -37,10 +37,6 @@
         background: #efefef;
         cursor: pointer;
         border-radius: 6px;
-        // border-width: 1px;
-        // border-style:  solid;
-        // border-color: #d0d7de;
-        height: 100px;
         box-sizing:border-box;
         display: flex;
         flex-direction: column;
@@ -71,13 +67,10 @@
             }
         }
         .content {
-            
             color: black;
-            padding: 12px;
-            font-size: 14px;
-            line-height: 18px;
+            padding: 17px 13px;
+            font-size: 12px;
             color-scheme: light;
-            margin-bottom: 16px;
             flex-grow: 1;
         }
 
