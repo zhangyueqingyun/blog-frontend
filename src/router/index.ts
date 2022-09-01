@@ -1,12 +1,13 @@
 import {createRouter,  createWebHistory} from 'vue-router'
-
+// const Home = () => import('@/views/Home/index.vue');
+import Home from '@/views/Home/index.vue'
 const Router = createRouter({
     history: createWebHistory('zblog'),
 
     routes: [{
         path: '/',
         name: 'home',
-        component: () => import('@/views/Home/index.vue')
+        component: Home
     }, {
         path: '/blog/:id',
         name: 'blog',

@@ -1,6 +1,6 @@
 import axios from 'axios' 
 const API_URL = 'https://121.40.90.158/api'
-const BASE_URL = import.meta.env.MODE == 'mock'? '' : API_URL
+const BASE_URL = API_URL
 
 function getResponseStatus(response: any) {
     return response?.status === 200 && response?.data?.code === 20000
