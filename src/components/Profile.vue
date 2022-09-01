@@ -11,7 +11,7 @@
         <div class="name">{{profile?.name}}</div>
         <div class="pick-name">{{profile?.mail}}</div>
         <div class="feeling">
-            <div class="ch">{{profile?.feeling?.ch}}</div>
+            <!-- <div class="ch">{{profile?.feeling?.ch}}</div> -->
             <div class="en">{{profile?.feeling?.en}}</div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             width: 296px;
             height: 296px;
             border-radius: 50%;
-            border: 1px solid #d0d7de;
+            // border: 1px solid #d0d7de;
             background: white;
         }
         .name {
@@ -39,13 +39,13 @@
         }
 
         .feeling {
-            margin-top: 24px;
+            margin-top: 22px;
             .en {
-                color: #57606a;
+                color: #333;
                 font-size: 14px;
-                font-weight: 300;
-                background: #f6f8fa;
-                border: 1px solid rgba(27,31,36,0.15);
+                font-weight: 600;
+                background: #efefef;
+                // border: 1px solid rgba(27,31,36,0.15);
                 padding: 10px;
                 border-radius: 4px;
                 margin-top: 10px;

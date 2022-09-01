@@ -29,7 +29,7 @@
 
 <style scoped lang="scss">
 
-  $nav-bg: #24292f;
+  $nav-bg: #cc9999;
   $nav-color: rgba(255, 255, 255, 0.7);
   $nav-hover-color: rgba(255, 255, 255, .8);
   .nav {
@@ -49,7 +49,7 @@
           margin-right: 3px;
           margin-left: 0;
           padding: 0;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
       }
 

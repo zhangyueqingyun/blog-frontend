@@ -59,17 +59,16 @@
     .content {
         margin-top: 30px;
         .categories {
-            padding: 10px;
             border-radius: 6px;
-            border-width: 1px;
-            border-style:  solid;
-            border-color: #d0d7de;
+            overflow: hidden;
+            // border-width: 1px;
+            // border-style:  solid;
+            // border-color: #d0d7de;
             margin-bottom: 15px;
+            transition: opacity 0.3s;
 
             :last-child {
                 border: 0px solid transparent;
-                padding-bottom: 0;
-                margin-bottom:0;
             }
         }
     }

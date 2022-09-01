@@ -7,32 +7,40 @@
 </script>
 
 <template>
+    
+    <router-link :to="`/blog/${blog.id}`">
     <div class="card">
         <div class="header">
-            <router-link :to="`/blog/${blog.id}`"><div class="title">{{blog?.title}}</div></router-link>
+            <div class="title">{{blog?.title}}</div>
             <!-- <div class="sign">标签</div> -->
         </div>
         <div class="content">
             {{blog?.description}}
         </div>
-        <div class="footer">
+        <!-- <div class="footer"> -->
             <!-- <div class="sign" v-for="sign of blog?.signs" :key="sign.id">
                 <div class="circle" :style="{background: sign?.icon}"></div>
                 <div class="text">{{sign?.name}}</div>
             </div> -->
-            <div class="date">{{format(blog?.datetime)}}</div>
-        </div>
+            <!-- <div class="date">{{format(blog?.datetime)}}</div> -->
+        <!-- </div> -->
     </div>
+</router-link>
 </template>
 
 <style scoped lang="scss">
     .card {
+        &:hover {
+            opacity: 0.8;
+        }
+        transition: opacity 0.3s;
+        background: #efefef;
+        cursor: pointer;
         border-radius: 6px;
-        border-width: 1px;
-        border-style:  solid;
-        border-color: #d0d7de;
+        // border-width: 1px;
+        // border-style:  solid;
+        // border-color: #d0d7de;
         height: 100px;
-        padding: 12px;
         box-sizing:border-box;
         display: flex;
         flex-direction: column;
@@ -42,17 +50,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 2px solid #fff;
+            padding: 12px;
             .title {
-                color: #0969da;
+                color: black;
                 font-size: 14px;
                 font-weight: 600;
                 cursor: pointer;
                 transition: color 0.3s;
                 text-decoration: none;
-
-                &:hover {
-                    color: #248adc;
-                }
             }
             .sign {
                 padding: 0 7px;
@@ -65,10 +71,11 @@
             }
         }
         .content {
-            margin-top: 8px;
-            font-size: 12px;
+            
+            color: black;
+            padding: 12px;
+            font-size: 14px;
             line-height: 18px;
-            color: rgb(87, 96, 106);
             color-scheme: light;
             margin-bottom: 16px;
             flex-grow: 1;

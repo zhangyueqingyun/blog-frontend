@@ -17,7 +17,9 @@
             display: flex;
             justify-content: space-between;
             align-items: bottom;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 13px;
+            border-bottom: 1px solid #dcdcdc;
             .left {
                 font-size: 16px;
                 color: #24292f;

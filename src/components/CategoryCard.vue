@@ -6,8 +6,8 @@
     });
 
     const icon = computed(() => (category.type === 'category' ? 
-        {name: "directory", color:"#54aeff"} : 
-        {name: "file", color:"#57606a"}
+        {name: "directory", color:"#CC9999"} : 
+        {name: "file", color:"#CC9999", background: '#fff'}
     ))
     const url = computed(() => (category.type === 'category' ? 
         `/category/${category.id}` :
@@ -16,36 +16,49 @@
 </script>
 
 <template>
+    
+    <router-link :to="url">
     <div class="category">
-        <svg-icon 
-            :name="icon.name" 
-            :color="icon.color"
-        />
+        <div class="icon-box">
+            <svg-icon 
+                :name="icon.name" 
+                :color="icon.color"
+            />
+        </div>
         
-        <router-link :to="url">
             <span class="name">
                 {{ category?.name }}
             </span>
-        </router-link>
     </div>
+    
+</router-link>
 </template>
 
 <style lang="scss" scoped>
     .category {
         display: flex;
-        border-bottom: 1px solid #d0d7de;
-        padding-bottom: 9px;
-        margin-bottom: 9px;
+        border-bottom: 2px solid #fff;
+        padding: 10px;
         font-size: 14px;
         align-items: center;
+        color: #333;
+        background: #f5f5f5;
+        &:hover {
+            opacity: 0.8;
+            
+            color: #000;
+        }
+        .icon-box {
+            border-radius: 50%;
+            background: #fff;
+            padding: -1px;
+            width:15px;
+            height: 15px;
+        }
         .name {
-            margin-left: 8px;
+            margin-left: 12px;
             cursor: pointer;
             transition: color 0.3s;
-            color: #333;
-            &:hover {
-                color: #777;
-            }
         }
     }
 </style>
