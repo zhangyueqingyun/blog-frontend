@@ -31,7 +31,10 @@ import Profile from '../components/Profile.vue'
         margin-left: 30px;
     }
     .top {
-        border: 1px solid rgb(216, 222, 228);
+        background-color: rgba(250,242,242);
+        position: sticky;
+        top: -30px;
+        // border: 1px solid rgb(216, 222, 228);
         display: flex;
         justify-content: center;
         padding: 0 50px;

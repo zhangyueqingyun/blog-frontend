@@ -20,12 +20,13 @@
 
 <style scoped lang="scss">
     .content {
+        position: sticky;
+        top: 20px;
         margin-top: -32px;
         .avatar {
             width: 296px;
             height: 296px;
             border-radius: 50%;
-            // border: 1px solid #d0d7de;
             background: white;
         }
         .name {
@@ -44,8 +45,7 @@
                 color: #333;
                 font-size: 14px;
                 font-weight: 600;
-                background: #efefef;
-                // border: 1px solid rgba(27,31,36,0.15);
+                background: #f8f8f8;
                 padding: 10px;
                 border-radius: 4px;
                 margin-top: 10px;
