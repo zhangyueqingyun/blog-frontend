@@ -8,7 +8,7 @@
 
     const data: any = reactive({
         active: 'news',
-        navs: []
+        navs: undefined
     });
 
     function handleTabClick (tab: any) {
@@ -24,6 +24,7 @@
     <basic-layout>
         <template v-slot:nav>
             <div 
+                v-show="data.navs"
                 class="item"
                 :class="{active: data.active == 'news'}"
                 @click="handleTabClick('news')"

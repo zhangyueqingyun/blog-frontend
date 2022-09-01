@@ -4,9 +4,9 @@
 </script>
 
 <template>
-    <div class="content">
+    <div v-if="profile.name" class="content">
         <div>
-            <img class="avatar" :src="profile?.avatar" >
+            <img v-show="profile?.avatar" class="avatar" :src="profile?.avatar" >
         </div>
         <div class="name">{{profile?.name}}</div>
         <div class="pick-name">{{profile?.mail}}</div>

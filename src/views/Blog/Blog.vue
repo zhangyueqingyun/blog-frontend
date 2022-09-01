@@ -9,7 +9,7 @@
     const route = useRoute()
 
     const state: any = reactive({
-        blog: {}
+        blog: undefined
     })
 
     onBeforeMount(async function() {
@@ -19,7 +19,7 @@
 </script>
 
 <template>
-    <div class="blog">
+    <div v-if="state.blog" class="blog">
         <div class="title">
             <div>{{state.blog.title}}.md</div>
             <div>{{format(state.blog.datetime)}}</div>

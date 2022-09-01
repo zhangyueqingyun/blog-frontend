@@ -6,7 +6,7 @@
     import { onBeforeMount, reactive } from 'vue';
     
     const state: any = reactive({
-        categoriedBlogs: []
+        categoriedBlogs: undefined
     });
 
     onBeforeMount(async function() {
@@ -15,7 +15,8 @@
 </script>
 
 <template>
-  <module v-for="category of state.categoriedBlogs" :key="category?.id">
+    <div v-show="state.categoriedBlogs">
+        <module v-for="category of state.categoriedBlogs" :key="category?.id">
         <template v-slot:top>{{category.name}}</template>
         <template v-slot:default>
             <blog-card
@@ -24,5 +25,6 @@
                 :blog="blog"
             ></blog-card>
         </template>
-    </module>
+        </module>
+    </div>
 </template>
