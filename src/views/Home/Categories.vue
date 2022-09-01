@@ -61,12 +61,8 @@
         .categories {
             border-radius: 6px;
             overflow: hidden;
-            // border-width: 1px;
-            // border-style:  solid;
-            // border-color: #d0d7de;
             margin-bottom: 15px;
             transition: opacity 0.3s;
-
             :last-child {
                 border: 0px solid transparent;
             }

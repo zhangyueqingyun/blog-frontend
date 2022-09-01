@@ -16,36 +16,32 @@
 </script>
 
 <template>
-    
     <router-link :to="url">
-    <div class="category">
+        <div class="category">
         <div class="icon-box">
             <svg-icon 
                 :name="icon.name" 
                 :color="icon.color"
             />
-        </div>
-        
-            <span class="name">
-                {{ category?.name }}
-            </span>
+        </div>            
+        <span class="name">
+            {{ category?.name }}
+        </span>
     </div>
-    
 </router-link>
 </template>
 
 <style lang="scss" scoped>
     .category {
         display: flex;
-        border-bottom: 2px solid #fff;
         padding: 10px;
         font-size: 14px;
         align-items: center;
         color: #333;
         background: #f5f5f5;
+        margin-bottom: 2px;
         &:hover {
             opacity: 0.8;
-            
             color: #000;
         }
         .icon-box {
