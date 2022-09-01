@@ -7,6 +7,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default  ({mode}): UserConfigExport=>{ 
   return {
+    base: '/zblog/',
     plugins: [
       vue(),
       viteMockServe({
@@ -33,5 +34,6 @@ export default  ({mode}): UserConfigExport=>{
         }
       }
     }
-  }
+  } 
 }
+

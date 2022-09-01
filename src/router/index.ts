@@ -1,22 +1,20 @@
 import {createRouter,  createWebHistory} from 'vue-router'
-import Home from '@/views/Home/index.vue'
-import Blog from '@/views/Blog/index.vue'
-import Category from '@/views/Category/index.vue'
 
 const Router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('zblog'),
+
     routes: [{
         path: '/',
         name: 'home',
-        component: Home
+        component: () => import('@/views/Home/index.vue')
     }, {
         path: '/blog/:id',
         name: 'blog',
-        component: Blog
+        component: () => import('@/views/Blog/index.vue')
     }, {
         path: '/category/:id',
         name: 'category',
-        component: Category
+        component: () => import('@/views/Category/index.vue')
     }]
 })
 

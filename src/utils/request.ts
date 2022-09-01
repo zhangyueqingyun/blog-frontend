@@ -1,5 +1,5 @@
 import axios from 'axios' 
-const API_URL = 'http://localhost:9000'
+const API_URL = 'https://121.40.90.158/api'
 const BASE_URL = import.meta.env.MODE == 'mock'? '' : API_URL
 
 function getResponseStatus(response: any) {
@@ -7,7 +7,7 @@ function getResponseStatus(response: any) {
 }
 
 export async function get(path: String,  params?: Object) {
-    const response = await  axios.get(`${BASE_URL}/api/${path}`, {
+    const response = await  axios.get(`${BASE_URL}/${path}`, {
         params
     })
     const success = getResponseStatus(response)
