@@ -1,7 +1,7 @@
 async function run() {
-    const { build } = require('vite');
-    const viteConfig = require('../vite.production');
-    await build(viteConfig);
+    // const { build } = require('vite');
+    // const viteConfig = require('../vite.production');
+    // await build(viteConfig);
 
     const util = require('node:util');
     const exec = util.promisify(require('node:child_process').exec);
