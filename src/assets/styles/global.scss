@@ -2,13 +2,12 @@ body {
     padding: 0px;
     margin: 0px;
     box-sizing:  border-box;
+    background: #eee;
 }
-
 .router-link-active, router-link-exact-active {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
 }
-
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;

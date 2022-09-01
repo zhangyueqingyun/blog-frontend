@@ -13,9 +13,12 @@ import Profile from '../components/Profile.vue'
         <div class="profile">
             <profile></profile>
         </div>
-        <div class="blogs">
+        <div class="blogs">            
             <slot></slot>
         </div>
+    </div>
+    <div class="footer">
+        @copy-right： 张玥卿云
     </div>
 </template>
 
@@ -34,7 +37,6 @@ import Profile from '../components/Profile.vue'
         background-color: rgba(250,242,242);
         position: sticky;
         top: -30px;
-        // border: 1px solid rgb(216, 222, 228);
         display: flex;
         justify-content: center;
         padding: 0 50px;
@@ -50,19 +52,33 @@ import Profile from '../components/Profile.vue'
             min-width: 600px;
         }
     }
-
     .bottom {
         display: flex;
         justify-content: center;
         padding: 0 50px;
+        padding-bottom: 70px;
+        background: white;
+        min-height: 70vh;
         .profile {
             @extend .left-panel;
             background-color: white;
         }
-
         .blogs {
             @extend .right-panel;
         }
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #eee;
+        padding: 8px;
+        font-size: 13px;
+        color: #999;
+        font-weight: 300;
+        background: #fafafa;
     }
 
 </style>
