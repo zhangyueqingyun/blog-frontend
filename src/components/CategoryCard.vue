@@ -38,7 +38,7 @@
         font-size: 14px;
         align-items: center;
         color: #333;
-        background: #f5f5f5;
+        background: #f6f7f8;
         margin-bottom: 2px;
         &:hover {
             opacity: 0.8;

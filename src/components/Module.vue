@@ -19,7 +19,7 @@
             align-items: bottom;
             margin-bottom: 12px;
             padding-bottom: 13px;
-            border-bottom: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcddde;
             .left {
                 font-size: 16px;
                 color: #24292f;

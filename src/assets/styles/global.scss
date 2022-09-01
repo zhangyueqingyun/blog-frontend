@@ -2,7 +2,10 @@ body {
     padding: 0px;
     margin: 0px;
     box-sizing:  border-box;
-    background: white;
+    background: linear-gradient(to bottom, white, #f8f9fa);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 .router-link-active, router-link-exact-active {
     color: rgba(255, 255, 255, 0.7);

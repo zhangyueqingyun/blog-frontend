@@ -21,7 +21,7 @@
 <template>
     <div v-if="state.blog" class="blog">
         <div class="title">
-            <div>{{state.blog.title}}.md</div>
+            <div>{{state.blog.title}}</div>
             <div>{{format(state.blog.datetime)}}</div>
         </div>
         <div class="content">
@@ -32,19 +32,90 @@
 
 <style lang="scss">
     .blog {
-        border: 1px solid #d0d7de;
         border-radius: 6px;
         margin-top: 30px;
         .title {
             padding: 16px;
-            background-color: #f6f8fa;
-            border-bottom: 1px solid #d0d7de;
+            background-color: #f7f8f9;
+            border: 1px solid #f7f8f9;
+            // border-bottom: 1px solid #d0d7de;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .content {
-            padding: 16px 32px 32px;
+            padding: 30px 32px 80px 32px;
+            border: 1px solid #f7f8f9;
+            background: linear-gradient(to bottom, white, #f7f8f9);
+
+            
+            h1,h2,h3,h4,h5,p,li {
+                font-weight:300;
+            }
+
+
+            h1 {
+                border-bottom: 1px solid #eaebec;
+                padding-bottom: 15px;
+            }
+
+            h2 {
+                border-bottom: 1px solid #ebeced;
+                padding-bottom: 10px;
+            }
+            li {
+                line-height: 25px;
+            }
+
+            li::marker {
+                color: #bb9999;
+            }
+
+            pre {
+                border-radius: 6px;
+                // background:rgba(254,250,251);
+                background: #fafbfc;
+                border: 1px solid #fafbfc;
+                padding: 20px;
+                font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+                overflow-x: auto;
+            }
+
+            code {
+                color: #333;
+                // font-weight: 300;
+                font-size: 15px;
+                line-height: 20px;
+                font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+            }
+            .function_ {
+                color: #cd5c5c;
+            }
+            .class_ {
+                color: #b22222;
+            }
+            .hljs {
+                &-params {
+                    color: #4a4b4c;
+                }
+                &-comment {
+                    color:  #cd5c5c;
+                    font-size: 15px;
+                }
+                &-keyword {
+                    color: #cd5c5c;
+                    font-size: 15px;
+                }
+                &-literal {
+                    color: #a3a4a5;
+                }
+                &-built_in {
+                    color: #8b0000;
+                }
+                &-property {
+                    color: #cd5c5c;
+                }
+            }
         }
     }
 </style>

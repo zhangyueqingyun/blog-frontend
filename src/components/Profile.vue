@@ -27,10 +27,10 @@
             width: 296px;
             height: 296px;
             border-radius: 50%;
-            background: white;
         }
         .name {
             font-size: 24px;
+            font-weight: 300;
         }
 
         .pick-name {
@@ -44,8 +44,8 @@
             .en {
                 color: #333;
                 font-size: 14px;
-                font-weight: 600;
-                background: #f8f8f8;
+                font-weight: 500;
+                background: #f8f9fa;
                 padding: 10px;
                 border-radius: 4px;
                 margin-top: 10px;

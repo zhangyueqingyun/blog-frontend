@@ -47,10 +47,11 @@
 <style lang="scss" scoped>
     .item {
         margin-right: 10px;
-        border: 2px solid transparent;
-        padding: 0 3px;
+        border: 3px solid transparent;
+        padding: 0 2px;
         cursor: pointer;
-        color: #555;
+        color: #234;
+        font-weight: 500;
         transition: color 0.3s;
 
         &:hover {
@@ -58,7 +59,7 @@
         }
     }
     .active {
-        border-bottom: 2px solid #fd8c73;
-        color: #000;
+        border-bottom: 3px solid #eebbbb;
+        color: #123;
     }
 </style>

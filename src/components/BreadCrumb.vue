@@ -30,7 +30,7 @@
 <template>
     <div class="container" v-if="state.path">
         <router-link  to="/">
-            <div class="item home">首页</div>
+            <div class="item cate">首页</div>
         </router-link>
         <div class="divide">/</div>
         <template v-for="{id, name} of state.path" :key="id">
@@ -53,18 +53,14 @@
             transition: color 0.3s;
             margin: 0;
             cursor: default;
-            color: #333;
+            color: #303132;
         
-            &:hover {
-                color: #555;
-            }
-        }
-        .home {
-            color: #666;
-            cursor: pointer;
         }
         .cate {
-            color: #666;
+            color: #404142;
+            &:hover {
+                color: #606162;
+            }
             cursor: pointer;
         }
         .divide {
@@ -72,7 +68,8 @@
             padding: 0 5px;
             cursor: default;
             transition: color 0.3s;
-            color: #777;
+            color: #d1d2d3;
+            font-weight: 300;
         }
     }
 

@@ -34,7 +34,6 @@
             opacity: 0.8;
         }
         transition: opacity 0.3s;
-        background: #efefef;
         cursor: pointer;
         border-radius: 6px;
         box-sizing:border-box;
@@ -47,11 +46,12 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #fff;
+            background: #f4f5f6;
             padding: 12px;
             .title {
-                color: black;
+                color: #345;
                 font-size: 14px;
-                font-weight: 600;
+                font-weight: 500;
                 cursor: pointer;
                 transition: color 0.3s;
                 text-decoration: none;
@@ -72,6 +72,7 @@
             font-size: 12px;
             color-scheme: light;
             flex-grow: 1;
+            background: #eff0f1;
         }
 
         .footer {
