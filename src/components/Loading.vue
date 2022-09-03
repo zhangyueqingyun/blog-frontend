@@ -1,8 +1,8 @@
 <template>
-    <div v-if="data.show" class="loading" :style="{opacity: data.opacity}">
-        <div class="loading-box">
+    <div v-if="data.show" class="container" :style="{opacity: data.opacity}">
+        <div class="loading">
             <div class="circle"></div>
-            我要喝酒。灌醉我刚才吃下的饭。
+            加载中 ...
         </div>
     </div>
 </template>
@@ -32,7 +32,7 @@
 </script>
 
 <style scoped lang="scss">
-.loading {
+.container {
     position: fixed;
     left: 0;
     top:0;
@@ -45,15 +45,11 @@
     align-items: center;
     font-weight: 300;
     transition: opacity 0.3s;
-
-    &-box {
+    .loading {
         display: flex;
         align-items: center;
-        margin-top: -10vh;
-        background-color: rgba(255, 250, 250);
-        padding: 10px;
-        border-radius: 50px;
-        border: 1px solid #cc9999;
+        margin-top: -15vh;
+        margin-left: -5vw;
         color: #cc9999;
         .circle {
             width: 20px;
