@@ -49,7 +49,6 @@
         display: flex;
         align-items: center;
         margin-top: -15vh;
-        margin-left: -5vw;
         color: #cc9999;
         .circle {
             width: 20px;
