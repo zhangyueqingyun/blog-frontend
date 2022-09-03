@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import BlogCard from '@/components/BlogCard.vue';
     import Module from '@/components/Module.vue';
+    import Loading from '@/components/Loading.vue';
     import { getNews } from '@/services/home';
 
     import { onBeforeMount, reactive } from 'vue';
@@ -15,6 +16,7 @@
 </script>
 
 <template>
+    <loading :visible="!state.categoriedBlogs"/>
     <div v-show="state.categoriedBlogs">
         <module v-for="category of state.categoriedBlogs" :key="category?.id">
         <template v-slot:top>{{category.name}}</template>

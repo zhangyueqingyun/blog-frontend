@@ -2,20 +2,19 @@
     import Module from '@/components/Module.vue';
     import CategoryCard from '@/components/CategoryCard.vue';
     import BlogCard from '@/components/BlogCard.vue';
+    import Loading from '@/components/Loading.vue';
+    
     import { getCategoriesAndBlogs } from '@/services/home';
     import { onBeforeMount, reactive, watch, computed } from 'vue';
 
     const props: any = defineProps({
         nav: Object
-    })
-
-    const data: any = reactive({
-        categories: [],
-        blogs: []
     });
 
-    const showCategories = computed(() => !!data?.categories?.length);
-    const showBlogs = computed(() => !!data?.blogs?.length);
+    const data: any = reactive({
+        categories: undefined,
+        blogs: undefined
+    });
 
     async function fetchCategoriesAndBlogs(){
         const categories = await  getCategoriesAndBlogs(props.nav.id);
@@ -29,8 +28,9 @@
 </script>
 
 <template>
+    <loading :visible="!(data?.blogs && data?.categories)"/>
     <div class="content">
-        <module v-if="showCategories" :key="`cate-${props.nav.id}`">
+        <module v-if="data?.categories?.length" :key="`cate-${props.nav.id}`">
             <template v-slot:top>目录</template>
             <template v-slot:default>
                 <div class="categories">
@@ -42,7 +42,7 @@
                 </div>
             </template>
         </module>
-        <module v-if="showBlogs" :key="`blog-${props.nav.id}`">
+        <module v-if="data?.blogs?.length" :key="`blog-${props.nav.id}`">
             <template v-slot:top>文章</template>
             <template v-slot:default>        
                 <blog-card 

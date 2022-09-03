@@ -3,8 +3,9 @@
     import {useRoute} from 'vue-router'
     // @ts-ignore
     import MarkDown from 'vue3-markdown-it';
-    import {getBlogById} from '@/services/blog'
-    import {format} from '@/utils/date'
+    import Loading from '@/components/Loading.vue';
+    import { getBlogById } from '@/services/blog'
+    import { format } from '@/utils/date';
 
     const route = useRoute()
 
@@ -19,6 +20,7 @@
 </script>
 
 <template>
+    <loading :visible="!state.blog" />
     <div v-if="state.blog" class="blog">
         <div class="title">
             <div>{{state.blog.title}}</div>
