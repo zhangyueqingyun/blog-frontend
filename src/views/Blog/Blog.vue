@@ -69,6 +69,19 @@
                 border-bottom: 1px solid rgba(220,150,150, 0.3);
                 padding-bottom: 10px;
             }
+
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            h4 {
+                font-size: 1.05em;
+            }
+
+            h5 {
+                font-size: 0.9em;
+            }
+
             li {
                 line-height: 25px;
             }
