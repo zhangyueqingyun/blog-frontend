@@ -52,17 +52,21 @@
 
             
             h1,h2,h3,h4,h5,p,li {
-                font-weight:300;
+                font-weight:500;
+            }
+
+            h1, h2, h3, h4, h5 {
+                color: #dd7979;
             }
 
 
             h1 {
-                border-bottom: 1px solid #eaebec;
+                border-bottom: 1px solid rgba(220,150,150, 0.3);
                 padding-bottom: 15px;
             }
 
             h2 {
-                border-bottom: 1px solid #ebeced;
+                border-bottom: 1px solid rgba(220,150,150, 0.3);
                 padding-bottom: 10px;
             }
             li {
@@ -70,7 +74,7 @@
             }
 
             li::marker {
-                color: #bb9999;
+                color: #dd7979;
             }
 
             pre {
@@ -84,8 +88,8 @@
             }
 
             code {
-                color: #333;
-                // font-weight: 300;
+                color: #555;
+                font-weight: 600;
                 font-size: 15px;
                 line-height: 20px;
                 font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
@@ -98,7 +102,7 @@
             }
             .hljs {
                 &-params {
-                    color: #4a4b4c;
+                    color: #555;
                 }
                 &-comment {
                     color:  #cd5c5c;

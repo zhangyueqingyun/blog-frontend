@@ -18,7 +18,7 @@ import Profile from '../components/Profile.vue'
         </div>
     </div>
     <div class="footer">
-        @copy-right： 张玥卿云
+        @Copyright： 张玥卿云
     </div>
 </template>
 
