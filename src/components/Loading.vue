@@ -1,5 +1,5 @@
 <template>
-    <div v-if="data.show" class="container" :style="{opacity: data.opacity}">
+    <div v-show="data.show" class="container" :style="{opacity: data.opacity}">
         <div class="loading">
             <div class="circle"></div>
             加载中 ...
@@ -11,7 +11,8 @@
     import { reactive, nextTick, watch } from 'vue';
 
     const props = defineProps({
-        visible: Boolean
+        visible: Boolean,
+        delay: Number
     });
 
     const data = reactive({
@@ -28,7 +29,12 @@
         });
     }
 
-    watch(() => props.visible, closeLoading);
+    watch(() => props.visible, function() {
+        if(props.delay)
+            setTimeout(closeLoading, props.delay);
+        else
+            closeLoading();
+    });
 </script>
 
 <style scoped lang="scss">

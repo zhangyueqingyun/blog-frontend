@@ -1,19 +1,26 @@
 <script setup lang="ts">
-    import BasicLayout from '../../layout/BasicLayout.vue';
+    import BasicLayout from '@/layout/BasicLayout.vue';
     import News from './News.vue';
     import Categories from './Categories.vue';
-    import { getNav } from '../../services/home';
+    import Loading from '@/components/Loading.vue';
 
+    import { getNews, getNav } from '@/services/home';
+    
     import { reactive, onBeforeMount } from 'vue';
 
     const data: any = reactive({
         active: 'news',
-        navs: undefined
+        navs: undefined,
+        categoriedBlogs: undefined
     });
 
     function handleTabClick (tab: any) {
         data.active = tab;
     }
+
+    onBeforeMount(async function() {
+        data.categoriedBlogs = await getNews();
+    });
 
     onBeforeMount(async function () {
         data.navs = await getNav();
@@ -21,6 +28,7 @@
 </script>
 
 <template>
+    <loading :visible="!data.categoriedBlogs"/>
     <basic-layout>
         <template v-slot:nav>
             <div 
@@ -37,7 +45,7 @@
         </template>
         <template v-slot>
             <keep-alive>
-                <news v-if="data.active == 'news'" />
+                <news :categoriedBlogs="data.categoriedBlogs" v-if="data.active == 'news'" />
                 <categories v-else :nav="data.active" :key="`${data?.active?.id}`" />
             </keep-alive>
         </template>

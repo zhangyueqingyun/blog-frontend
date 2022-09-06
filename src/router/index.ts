@@ -1,9 +1,14 @@
 import {createRouter,  createWebHistory} from 'vue-router'
-// const Home = () => import('@/views/Home/index.vue');
-import Home from '@/views/Home/index.vue'
+
+import Home from '@/views/Home/index.vue';
+import Blog from '@/views/Blog/index.vue';
+// import Category from '@/views/Category/index.vue';
+
+const Category = () => import('@/views/Category/index.vue')
+
+
 const Router = createRouter({
     history: createWebHistory('zblog'),
-
     routes: [{
         path: '/',
         name: 'home',
@@ -11,12 +16,12 @@ const Router = createRouter({
     }, {
         path: '/blog/:id',
         name: 'blog',
-        component: () => import('@/views/Blog/index.vue')
+        component: Blog
     }, {
         path: '/category/:id',
         name: 'category',
-        component: () => import('@/views/Category/index.vue')
+        component: Category
     }]
 })
 
-export default Router
+export default Router;

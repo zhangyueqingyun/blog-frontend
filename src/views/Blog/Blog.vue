@@ -1,33 +1,32 @@
 <script setup lang="ts">
-    import {reactive, onBeforeMount} from 'vue'
-    import {useRoute} from 'vue-router'
-    // @ts-ignore
-    import MarkDown from 'vue3-markdown-it';
     import Loading from '@/components/Loading.vue';
-    import { getBlogById } from '@/services/blog'
+    import { defineAsyncComponent } from 'vue';
     import { format } from '@/utils/date';
-
-    const route = useRoute()
-
-    const state: any = reactive({
-        blog: undefined
-    })
-
-    onBeforeMount(async function() {
-        state.blog = await getBlogById(route.params.id)
-    })
-
+    const MarkDown = defineAsyncComponent({
+        // @ts-ignore
+        loader: () => import ('vue3-markdown-it'),
+        delay: 0
+    });
+    const props = defineProps({
+        blog: Object
+    });
 </script>
 
 <template>
-    <loading :visible="!state.blog" />
-    <div v-if="state.blog" class="blog">
+    <div class="blog">
         <div class="title">
-            <div>{{state.blog.title}}</div>
-            <div>{{format(state.blog.datetime)}}</div>
+            <div>{{props?.blog?.title}}</div>
+            <div>{{format(props?.blog?.datetime)}}</div>
         </div>
         <div class="content">
-            <mark-down :source="state.blog.content"></mark-down>
+            <suspense>
+                <template v-slot:default>
+                    <mark-down :source="props?.blog?.content"></mark-down>
+                </template>
+                <template v-slot:fallback>
+                    <loading :visible="true"/>
+                </template>
+            </suspense>
         </div>
     </div>
 </template>
@@ -49,8 +48,6 @@
             padding: 30px 32px 80px 32px;
             border: 1px solid #f7f8f9;
             background: linear-gradient(to bottom, white, #f7f8f9);
-
-            
             h1,h2,h3,h4,h5,p,li {
                 font-weight:500;
             }
@@ -59,37 +56,29 @@
                 color: #cd5c5c;
             }
 
-
             h1 {
                 border-bottom: 1px solid rgba(220,150,150, 0.3);
                 padding-bottom: 15px;
             }
-
             h2 {
                 border-bottom: 1px solid rgba(220,150,150, 0.3);
                 padding-bottom: 10px;
             }
-
             h3 {
                 font-size: 1.2em;
             }
-            
             h4 {
                 font-size: 1.05em;
             }
-
             h5 {
                 font-size: 0.9em;
             }
-
             li {
                 line-height: 25px;
             }
-
             li::marker {
                 color: #cd5c5c;
             }
-
             pre {
                 border-radius: 6px;
                 // background:rgba(254,250,251);
@@ -99,7 +88,6 @@
                 font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
                 overflow-x: auto;
             }
-
             code {
                 color: #555;
                 font-weight: 600;
