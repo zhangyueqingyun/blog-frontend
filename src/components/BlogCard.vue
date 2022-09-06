@@ -11,97 +11,125 @@
 </script>
 
 <template>
-    <div class="card" @click="click">
+<div class="card" @click="click">
     <div class="header">
         <div class="title">{{blog?.title}}</div>
-        <!-- <div class="sign">标签</div> -->
+        <div class="signs">
+            <div class="sign">阅读量：196</div>
+        </div>
     </div>
     <div class="content">
         {{blog?.description}}
     </div>
-    <!-- <div class="footer"> -->
-        <!-- <div class="sign" v-for="sign of blog?.signs" :key="sign.id">
+</div>
+
+<div class="footer">
+        <div class="signs">
+            <div class="sign" v-for="sign of [{id:0 , name: 'Javascript', icon: '#ffcccc'},{id:1 , name: '标准', icon: '#ccccff'}]" :key="sign.id">      
             <div class="circle" :style="{background: sign?.icon}"></div>
             <div class="text">{{sign?.name}}</div>
-        </div> -->
-        <!-- <div class="date">{{format(blog?.datetime)}}</div> -->
-    <!-- </div> -->
-</div>
+            </div>
+        </div>
+        <div class="date">发布时间：{{format(blog.datetime)}}</div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-    .card {
-        &:hover {
-            opacity: 0.8;
-        }
-        transition: opacity 0.3s;
-        cursor: pointer;
-        border-radius: 6px;
-        box-sizing:border-box;
+.card {
+    &:hover {
+        opacity: 0.8;
+    }
+    transition: opacity 0.3s;
+    cursor: pointer;
+    border-radius: 8px;
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    .header {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        margin-bottom: 15px;
-        .header {
+        align-items: center;
+        border-bottom: 2px solid #fff;
+        background: #f4f5f6;
+        padding: 12px;
+        .title {
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+            text-decoration: none;
+            border-left: 3px solid #cc9999;
+            padding-left: 10px;
+            font-weight: 500;
+        }
+        .signs {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #fff;
-            background: #f4f5f6;
-            padding: 12px;
-            .title {
-                color: #345;
-                font-size: 14px;
-                font-weight: 500;
-                cursor: pointer;
-                transition: color 0.3s;
-                text-decoration: none;
-            }
             .sign {
+                margin-left: 5px;
                 padding: 0 7px;
                 font-size: 12px;
                 font-weight: 500;
                 line-height: 18px;
                 white-space: no-wrap;
-                border: 1px solid #d0d7de;
+                border: 1px solid #fff;
+                background-color: white;
                 border-radius: 2em;
             }
         }
-        .content {
-            color: black;
-            padding: 17px 13px;
-            font-size: 12px;
-            color-scheme: light;
-            flex-grow: 1;
-            background: #eff0f1;
-        }
-
-        .footer {
+    }
+    .content {
+        color: black;
+        padding: 17px 13px;
+        font-size: 14px;
+        color-scheme: light;
+        flex-grow: 1;
+        background: #eff0f1;
+    }
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .signs{
+        display: flex;
+        .sign {
             display: flex;
-            justify-content: space-between;
-            .sign {
-                display: flex;
-                align-items: center;
-                .circle {
-                    background: rgb(241, 224, 90);
-                    width: 10px;
-                    height:10px;
-                    border-radius: 50%;
-                    border: 1px solid rgba(27, 31, 36, 0.1);
-                }
-                .text {
-                    font-size: 12px;
-                    color: rgb(87, 96, 106);
-                    line-height: 18px;
-                    margin-left: 3px;
-                }
+            align-items: center;
+            .circle {
+                background: rgb(241, 224, 90);
+                width: 10px;
+                height:10px;
+                margin: 2px;
+                border-radius: 50%;
+                margin-left: 5px;
             }
-            .date {
+            .text {
                 font-size: 12px;
                 color: rgb(87, 96, 106);
                 line-height: 18px;
                 margin-left: 3px;
+                margin-right: 5px;
             }
         }
     }
+    .date {
+        font-size: 12px;
+        color: #999;
+        line-height: 18px;
+        margin-left: 3px;
+        margin-left: 5px;
+        padding: 0 7px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+        white-space: no-wrap;
+        // border: 1px solid #919293;
+        // background-color: #ffcccc;
+        border-radius: 2em;
+        margin-top: 2px;
+    }
+}
 </style>

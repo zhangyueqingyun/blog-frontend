@@ -40,7 +40,7 @@
                 </div>
             </template>
         </module>
-        <module v-if="data?.blogs?.lengths" :key="`blog-${route.params.id}`">
+        <module v-if="data?.blogs?.length" :key="`blog-${route.params.id}`">
             <template v-slot:top>文章</template>
             <template v-slot:default>        
                 <blog-card 
