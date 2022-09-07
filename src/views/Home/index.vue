@@ -3,9 +3,8 @@
     import News from './News.vue';
     import Categories from './Categories.vue';
     import Loading from '@/components/Loading.vue';
-
+    import ProfileMobile from '@/components/ProfileMobile.vue'
     import { getNews, getNav } from '@/services/home';
-    
     import { reactive, onBeforeMount } from 'vue';
 
     const data: any = reactive({
@@ -29,6 +28,7 @@
 
 <template>
     <loading :visible="!data.categoriedBlogs"/>
+    <profile-mobile></profile-mobile>
     <basic-layout>
         <template v-slot:nav>
             <div 
