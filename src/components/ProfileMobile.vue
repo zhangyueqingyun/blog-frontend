@@ -15,7 +15,6 @@
                 <div class="name">{{profile?.name}}</div>
                 <div class="pick-name">{{profile?.mail}}</div>
             </div>
-
         </div>
         <div class="feeling">
             <div class="en">{{profile?.feeling?.en}}</div>
