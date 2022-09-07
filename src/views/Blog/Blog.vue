@@ -129,7 +129,7 @@
     @media screen and (max-width:900px) { 
         .blog {
             .title {
-                font-size: 22px;
+                font-size: 25px;
                 padding: 22px;
                 background-color: #f7f8f9;
                 border: 1px solid #f7f8f9;

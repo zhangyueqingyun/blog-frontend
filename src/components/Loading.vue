@@ -57,8 +57,8 @@
         margin-top: -15vh;
         color: #cc9999;
         .circle {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             border: 3px solid #fff;
             border-left: 5px solid #cc9999;
@@ -78,5 +78,19 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+@media screen and (max-width:900px)  {
+    .container {
+        font-size: 25px;
+        font-weight: 300;
+        .loading {
+            .circle {
+                width: 30px;
+                height: 30px;
+                margin-right: 12px;
+            }
+        }
+    }   
 }
 </style>
