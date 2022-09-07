@@ -18,7 +18,7 @@
 <template>
     <router-link :to="url">
         <div class="category">
-        <div class="icon-box">
+        <div class="icon-box" :style="{backgroundColor: icon.name === 'directory' ? 'transparent': 'white'}">
             <svg-icon 
                 :name="icon.name" 
                 :color="icon.color"
@@ -35,7 +35,8 @@
     .category {
         display: flex;
         padding: 10px;
-        font-size: 14px;
+        font-size: 16px;
+        font-weight: 500;
         align-items: center;
         color: #333;
         background: #f6f7f8;

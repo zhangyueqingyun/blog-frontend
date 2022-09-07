@@ -57,7 +57,7 @@
 
 <style lang="scss" scoped>
     .content {
-        margin-top: 30px;
+        // margin-top: 30px;
         .categories {
             border-radius: 8px;
             overflow: hidden;

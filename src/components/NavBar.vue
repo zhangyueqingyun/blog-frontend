@@ -34,7 +34,7 @@
   $nav-hover-color: rgba(255, 255, 255, .8);
   .nav {
     background:  $nav-bg;
-    padding: 16px 24px;
+    padding: 10px 24px;
     height: 30px;
     display: flex;
     justify-content: space-between;

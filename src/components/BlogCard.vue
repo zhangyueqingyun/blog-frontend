@@ -98,7 +98,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     .signs{
         display: flex;
         .sign {
@@ -110,10 +110,10 @@
                 height:10px;
                 margin: 2px;
                 border-radius: 50%;
-                margin-left: 5px;
+                margin-left: 7px;
             }
             .text {
-                font-size: 12px;
+                font-size: 13px;
                 color: rgb(87, 96, 106);
                 line-height: 18px;
                 margin-left: 3px;

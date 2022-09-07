@@ -34,15 +34,17 @@
         }
 
         .pick-name {
-            color: #57606a;
+            color: #87808a;
             font-size: 20px;
             font-weight: 300;
+            font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+
         }
 
         .feeling {
             margin-top: 22px;
             .en {
-                color: #333;
+                color: #5a5b5c;
                 font-size: 15px;
                 font-weight: 500;
                 background: #f8f9fa;

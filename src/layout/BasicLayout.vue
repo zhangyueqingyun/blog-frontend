@@ -37,11 +37,11 @@ import Profile from '../components/Profile.vue'
     .top {
         background-color: rgba(254,247,248);
         position: sticky;
-        top: -30px;
+        top: -10px;
         display: flex;
         justify-content: center;
         padding: 0 50px;
-        padding-top: 24px;
+        padding-top: 10px;
         .block {
             @extend .left-panel;
         }

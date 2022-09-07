@@ -48,6 +48,9 @@
             padding: 30px 32px 80px 32px;
             border: 1px solid #f7f8f9;
             background: linear-gradient(to bottom, white, #f7f8f9);
+            font-weight: 300;
+            color: #555;
+
             h1,h2,h3,h4,h5,p,li {
                 font-weight:500;
             }
