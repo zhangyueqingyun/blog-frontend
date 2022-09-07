@@ -59,7 +59,7 @@
     .content {
         margin-top: 30px;
         .categories {
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             margin-bottom: 15px;
             transition: opacity 0.3s;

@@ -53,26 +53,26 @@
             }
 
             h1, h2, h3, h4, h5 {
-                color: #cd5c5c;
+                color: #333;
             }
 
             h1 {
-                border-bottom: 1px solid rgba(220,150,150, 0.3);
+                border-bottom: 1px solid rgba(150,160,170, 0.2);
                 padding-bottom: 15px;
             }
             h2 {
-                border-bottom: 1px solid rgba(220,150,150, 0.3);
+                border-bottom: 1px solid rgba(150,160,170, 0.2);
                 padding-bottom: 10px;
             }
-            h3 {
-                font-size: 1.2em;
-            }
-            h4 {
-                font-size: 1.05em;
-            }
-            h5 {
-                font-size: 0.9em;
-            }
+            // h3 {
+            //     font-size: 1.2em;
+            // }
+            // h4 {
+            //     font-size: 1.05em;
+            // }
+            // h5 {
+            //     font-size: 0.9em;
+            // }
             li {
                 line-height: 25px;
             }

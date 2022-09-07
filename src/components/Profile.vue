@@ -29,13 +29,13 @@
             border-radius: 50%;
         }
         .name {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 300;
         }
 
         .pick-name {
             color: #57606a;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 300;
         }
 
@@ -43,7 +43,7 @@
             margin-top: 22px;
             .en {
                 color: #333;
-                font-size: 14px;
+                font-size: 15px;
                 font-weight: 500;
                 background: #f8f9fa;
                 padding: 10px;

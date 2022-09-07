@@ -62,7 +62,7 @@
         padding: 12px;
         .title {
             color: #000;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 500;
             cursor: pointer;
             transition: color 0.3s;
@@ -89,7 +89,7 @@
     .content {
         color: black;
         padding: 17px 13px;
-        font-size: 14px;
+        font-size: 15px;
         color-scheme: light;
         flex-grow: 1;
         background: #eff0f1;

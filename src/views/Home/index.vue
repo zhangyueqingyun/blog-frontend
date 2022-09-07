@@ -68,6 +68,7 @@
     }
     .active {
         border-bottom: 3px solid #eebbbb;
+        border-radius: 3px;
         color: #123;
     }
 </style>
