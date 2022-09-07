@@ -29,14 +29,19 @@
 
 <template>
     <div class="container" v-if="state.path">
-        <router-link  to="/">
-            <div class="item cate">首页</div>
-        </router-link>
+        <div class="item cate">
+            <router-link  to="/">
+                首页
+            </router-link>
+        </div>
         <div class="divide">/</div>
         <template v-for="{id, name} of state.path" :key="id">
+                <div class="item cate">
+                    
             <router-link :to="`/category/${id}`">
-                <div class="item cate">{{name}}</div>
+                    {{name}}
             </router-link> 
+                </div>
             <div class="divide">/</div>
         </template>
         <div class="item">{{state.current.name}}</div>
@@ -48,22 +53,32 @@
     .container {
         display: flex;
         .item {
+            display: flex;
+            align-items: center;
             border: 2px solid transparent;
             padding: 0;
             transition: color 0.3s;
             margin: 0;
             cursor: default;
-            color: #303132;
+            color: #303132 !important;
         
         }
         .cate {
             color: #404142;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
             &:hover {
                 color: #606162;
             }
-            cursor: pointer;
+            a {
+                color: #404142;
+              
+            }
         }
         .divide {
+            display: flex;
+            align-items: center;
             border: 2px solid transparent;
             padding: 0 5px;
             cursor: default;
@@ -72,5 +87,21 @@
             font-weight: 300;
         }
     }
+    
+    @media screen and (max-width:900px) { 
+        .container {
 
+            padding: 10px 0;
+            .item {
+                display: flex;
+                align-items: center;
+            }
+            .cate {
+            
+                display: flex;
+                align-items: center; 
+            }
+        }
+       
+    }
 </style>

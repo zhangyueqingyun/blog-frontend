@@ -84,14 +84,16 @@ import Profile from '../components/Profile.vue'
         }
         .top {
             justify-content: flex-start;
-            padding-left: 0;
-            padding-right:0;
+            padding: 0;
+            top: 0;
+            
+            font-size: 22px;
             .tabs {
                 margin-left: 10px;
             }
         }
         .bottom {
-            padding: 0 10px;
+            padding: 0 17px;
             padding-bottom: 70px;
         }
     }

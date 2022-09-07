@@ -71,4 +71,12 @@
         border-radius: 3px;
         color: #123;
     }
+    
+    @media screen and (max-width:900px) { 
+       .item {
+            display: flex;
+            align-items: center;
+            padding: 10px 3px;
+       }
+    }
 </style>

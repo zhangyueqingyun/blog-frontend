@@ -14,7 +14,7 @@
       <span class="item">@zhangyueqingyun</span>
     </div>
     <div class="right-bar">
-      <div class="item">
+      <!-- <div class="item">
         <a :href="githubUrl">
           <svg-icon 
             name="github" 
@@ -22,7 +22,7 @@
             size="22" 
           />
         </a>
-      </div>
+      </div> -->
     </div>
   </nav>
 </template>
@@ -64,6 +64,18 @@
       .item {
         margin-left: 15px;
         cursor: pointer;
+      }
+    }
+  }
+  @media screen and (max-width:900px) { 
+    .nav {
+      
+      padding: 16px 14px;
+      .left-bar {
+        .item {
+          font-size: 20px;
+
+        }
       }
     }
   }

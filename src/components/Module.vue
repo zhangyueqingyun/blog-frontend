@@ -17,7 +17,7 @@
             display: flex;
             justify-content: space-between;
             align-items: bottom;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             padding-bottom: 5px;
             border-bottom: 1px solid #dcddde;
             .title {
@@ -33,6 +33,17 @@
             //     color: #0969da;
             //     font-weight: 300;
             // }
+                
+            @media screen and (max-width:900px) { 
+                .title {
+                    font-size: 20px;
+                    color: #24292f;
+                    font-weight: 400;
+                    border-bottom: 2px solid #eecccc;
+                    padding: 3px 7px;
+                    border-radius: 10px;
+                }
+            }
         }
    }
 </style>

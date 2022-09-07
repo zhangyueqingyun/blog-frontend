@@ -125,4 +125,18 @@
             }
         }
     }
+    @media screen and (max-width:900px) { 
+        .blog {
+            .title {
+                font-size: 22px;
+                padding: 22px;
+                background-color: #f7f8f9;
+                border: 1px solid #f7f8f9;
+                // border-bottom: 1px solid #d0d7de;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
 </style>
