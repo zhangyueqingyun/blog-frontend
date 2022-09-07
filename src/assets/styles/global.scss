@@ -6,6 +6,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     min-height: 100vh;
+    font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 }
 .router-link-active, router-link-exact-active {
     color: rgba(255, 255, 255, 0.7);

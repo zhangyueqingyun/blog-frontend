@@ -107,11 +107,9 @@
                 }
                 &-comment {
                     color:  #cd5c5c;
-                    font-size: 15px;
                 }
                 &-keyword {
                     color: #cd5c5c;
-                    font-size: 15px;
                 }
                 &-literal {
                     color: #a3a4a5;
@@ -136,6 +134,14 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+            .content {
+                code {
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 28px;
+                    font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+                }
             }
         }
     }
