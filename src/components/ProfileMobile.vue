@@ -11,7 +11,6 @@
                 <img v-show="profile?.avatar" class="avatar" :src="profile?.avatar" >
             </div>
             <div>
-
                 <div class="name">{{profile?.name}}</div>
                 <div class="pick-name">{{profile?.mail}}</div>
             </div>
@@ -34,31 +33,31 @@
             padding: 0 35px;
             .info {
                 display: flex;
-                padding: 15px 0;
+                padding: 20px 0;
                 align-items: center;
                 border-bottom: 2px solid white;
                 .avatar {
                     border-radius: 50%;
-                    margin-right: 10px;
+                    margin-right: 12px;
                     img {
-                        width: 70px;
-                        height: 70px;
+                        width: 75px;
+                        height: 75px;
                     }
                 }
 
                 .name {
-                    font-size: 22px;
+                    font-size: 25px;
                     font-weight: 500;
                 }
 
                 .pick-name {
-                    font-size: 20px;
+                    font-size: 22px;
                     font-weight: 300;
                 }
             }
             .feeling {
                 padding: 15px 0;
-                font-size: 18px;
+                font-size: 20px;
                 color: #dd9999;
                 font-weight: 500;
             }

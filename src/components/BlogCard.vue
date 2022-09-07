@@ -17,15 +17,15 @@
 
 <template>
 
-<div class="header">
+<!-- <div class="header">
     <div class="signs">
         <div class="sign">      
-            <div class="circle" :style="{background: sign?.color}"></div>
-            <div class="text">{{sign?.name}}</div>
+            <div v-show="sign?.name" class="circle" :style="{background: sign?.color}"></div>
+            <div v-show="sign?.name" class="text">{{sign?.name || '未分类'}}</div>
         </div>
     </div>
     <div class="date">发布时间：{{format(blog.datetime)}}</div>
-</div>
+</div> -->
 <div class="card" @click="click">
     <div class="card-header">
         <div class="title">{{blog?.title}}</div>
@@ -36,6 +36,15 @@
     <div class="content">
         {{blog?.description}}
     </div>
+</div>
+<div class="footer">
+    <div class="signs">
+        <div class="sign">      
+            <div v-show="sign?.name" class="circle" :style="{background: sign?.color}"></div>
+            <div v-show="sign?.name" class="text">{{sign?.name || '未分类'}}</div>
+        </div>
+    </div>
+    <div class="date">发布时间：{{format(blog.datetime)}}</div>
 </div>
 </template>
 
@@ -52,7 +61,7 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
     &-header {
         display: flex;
         justify-content: space-between;
@@ -95,17 +104,17 @@
         background: #eff0f1;
     }
 }
-.header {
+.footer {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3px;
+    margin-bottom: 15px;
     .signs{
         display: flex;
         .sign {
             display: flex;
             align-items: center;
             .circle {
-                background: rgb(241, 224, 90);
+                background: rgb(224, 224, 224);
                 width: 10px;
                 height:10px;
                 margin: 2px;
@@ -142,7 +151,7 @@
 @media screen and (max-width:900px) { 
     .card {        
         border-radius: 8px;
-        margin-bottom: 20px;
+        margin-bottom: 2px;
         &-header {
             display: flex;
             justify-content: space-between;
@@ -184,10 +193,10 @@
             background: #eff0f1;
         }
     }
-    .header {
+    .footer {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2px;
+        margin-bottom: 20px;
         .signs{
             display: flex;
             .sign {
