@@ -11,8 +11,18 @@
 </script>
 
 <template>
+
+<div class="header">
+    <div class="signs">
+        <div class="sign" v-for="sign of [{id:0 , name: 'Javascript', icon: '#ccccff'}]" :key="sign.id">      
+        <div class="circle" :style="{background: sign?.icon}"></div>
+        <div class="text">{{sign?.name}}</div>
+        </div>
+    </div>
+    <div class="date">发布时间：{{format(blog.datetime)}}</div>
+</div>
 <div class="card" @click="click">
-    <div class="header">
+    <div class="card-header">
         <div class="title">{{blog?.title}}</div>
         <div class="signs">
             <div class="sign">阅读量：196</div>
@@ -22,16 +32,6 @@
         {{blog?.description}}
     </div>
 </div>
-
-<div class="footer">
-        <div class="signs">
-            <div class="sign" v-for="sign of [{id:0 , name: 'Javascript', icon: '#ffcccc'},{id:1 , name: '标准', icon: '#ccccff'}]" :key="sign.id">      
-            <div class="circle" :style="{background: sign?.icon}"></div>
-            <div class="text">{{sign?.name}}</div>
-            </div>
-        </div>
-        <div class="date">发布时间：{{format(blog.datetime)}}</div>
-    </div>
 </template>
 
 <style scoped lang="scss">
@@ -47,7 +47,8 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    .header {
+    margin-bottom: 15px;
+    &-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -89,10 +90,10 @@
         background: #eff0f1;
     }
 }
-.footer {
+.header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
     .signs{
         display: flex;
         .sign {

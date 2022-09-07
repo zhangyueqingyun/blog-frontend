@@ -12,7 +12,7 @@
 
 <style scoped lang="scss">
    .module {
-        margin-top: 30px;
+        margin-top: 20px;
         .header {
             display: flex;
             justify-content: space-between;
@@ -21,12 +21,12 @@
             padding-bottom: 5px;
             border-bottom: 1px solid #dcddde;
             .title {
-                font-size: 12px;
+                font-size: 14px;
                 color: #24292f;
                 font-weight: 400;
-                border: 2px solid #eecccc;
+                border-bottom: 2px solid #eecccc;
                 padding: 3px 7px;
-                border-radius: 20px;
+                border-radius: 10px;
             }
             // .right {
             //     font-size: 10px;
