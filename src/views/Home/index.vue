@@ -59,7 +59,7 @@
         padding: 0 2px;
         cursor: pointer;
         color: #303132;
-        font-weight: 500;
+        font-weight: 300;
         transition: color 0.3s;
 
         &:hover {
