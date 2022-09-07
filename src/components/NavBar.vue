@@ -70,10 +70,10 @@
   @media screen and (max-width:900px) { 
     .nav {
       
-      padding: 16px 14px;
+      padding: 16px 25px;
       .left-bar {
         .item {
-          font-size: 20px;
+          font-size: 25px;
 
         }
       }

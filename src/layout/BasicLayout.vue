@@ -84,16 +84,17 @@ import Profile from '../components/Profile.vue'
         }
         .top {
             justify-content: flex-start;
-            padding: 0;
+            padding: 0 35px;
             top: 0;
             
-            font-size: 22px;
+            font-size: 25px;
             .tabs {
-                margin-left: 10px;
+                margin-left: 0;
+                height: 60px;
             }
         }
         .bottom {
-            padding: 0 17px;
+            padding: 0 35px;
             padding-bottom: 70px;
         }
     }
@@ -111,4 +112,10 @@ import Profile from '../components/Profile.vue'
         background: #fafbfc;
     }
 
+    @media screen and (max-width:900px) { 
+        .footer {
+            padding: 15px;
+            font-size: 22px;
+        }
+    }
 </style>

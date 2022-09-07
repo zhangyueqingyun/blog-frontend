@@ -139,6 +139,14 @@
                 align-items: center;
             }
             .content {
+                border: 1px solid #f7f8f9;
+                padding: 20px 20px 80px 20px;
+                p {
+                    line-height: 33px;
+                }
+                li {
+                    line-height: 33px;
+                }
                 code {
                     font-weight: 600;
                     font-size: 22px;

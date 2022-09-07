@@ -194,9 +194,8 @@
                 display: flex;
                 align-items: center;
                 .circle {
-                    background: rgb(241, 224, 90);
-                    width: 20px;
-                    height:20px;
+                    width: 18px;
+                    height:18px;
                     margin: 5px;
                     border-radius: 50%;
                     margin-left: 5px;

@@ -83,7 +83,7 @@
             padding: 0 5px;
             cursor: default;
             transition: color 0.3s;
-            color: #d1d2d3;
+            color: #9a9b9c;
             font-weight: 300;
         }
     }

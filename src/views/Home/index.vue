@@ -58,7 +58,7 @@
         border: 3px solid transparent;
         padding: 0 2px;
         cursor: pointer;
-        color: #234;
+        color: #303132;
         font-weight: 500;
         transition: color 0.3s;
 
@@ -69,14 +69,20 @@
     .active {
         border-bottom: 3px solid #eebbbb;
         border-radius: 3px;
-        color: #123;
+        color: #2a3b2c;
+        font-weight: 500;
     }
     
     @media screen and (max-width:900px) { 
        .item {
             display: flex;
+            font-size: 22px;
             align-items: center;
-            padding: 10px 3px;
+            padding: 15px 3px;
+            font-weight: 300;
+       }
+       .active {
+            font-weight: 500;
        }
     }
 </style>
