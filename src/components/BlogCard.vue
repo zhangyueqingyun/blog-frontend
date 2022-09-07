@@ -1,6 +1,9 @@
 <script setup lang="ts">
     import {format} from '../utils/date';
+    import {inject, computed} from 'vue';
     
+    const signs: any = inject('signs');
+
     const {blog = {}} = defineProps({
         blog: Object
     });
@@ -8,15 +11,17 @@
     function click() {
         window.location.href = `/zblog/blog/${blog.id}`
     }
+
+    const sign = computed(() => signs.value.find((sign: any) => sign.id === blog.signId));
 </script>
 
 <template>
 
 <div class="header">
     <div class="signs">
-        <div class="sign" v-for="sign of [{id:0 , name: 'Javascript', icon: '#ccccff'}]" :key="sign.id">      
-        <div class="circle" :style="{background: sign?.icon}"></div>
-        <div class="text">{{sign?.name}}</div>
+        <div class="sign">      
+            <div class="circle" :style="{background: sign?.color}"></div>
+            <div class="text">{{sign?.name}}</div>
         </div>
     </div>
     <div class="date">发布时间：{{format(blog.datetime)}}</div>
@@ -25,7 +30,7 @@
     <div class="card-header">
         <div class="title">{{blog?.title}}</div>
         <div class="signs">
-            <div class="sign">阅读量：196</div>
+            <div class="sign">阅读量：{{blog.readingAmount}}</div>
         </div>
     </div>
     <div class="content">

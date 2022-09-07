@@ -6,7 +6,7 @@
 
     import {reactive, onBeforeMount} from 'vue'
     import {useRoute} from 'vue-router'
-    import { getBlogById } from '@/services/blog'
+    import { getBlogById, readBlog } from '@/services/blog'
 
     const route = useRoute()
 
@@ -16,6 +16,10 @@
 
     onBeforeMount(async function() {
         state.blog = await getBlogById(route.params.id)
+    })
+
+    onBeforeMount(async function() {
+        readBlog(route.params.id)
     })
 </script>
 

@@ -1,5 +1,8 @@
 import axios from 'axios' 
+
 const API_URL = 'https://121.40.90.158/api'
+// const API_URL = 'http://127.0.0.1:9000/api'
+
 const BASE_URL = API_URL
 
 function getResponseStatus(response: any) {
