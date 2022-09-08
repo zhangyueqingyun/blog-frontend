@@ -87,7 +87,11 @@
         .loading {
             .circle {
                 width: 30px;
-                height: 30px;
+                height: 30px;    
+                border-left: 5px solid #cc9999;
+                border-right: 5px solid #9999cc;
+                border-top: 3px solid #cc9999;
+                border-bottom: 3px solid #9999cc;
                 margin-right: 12px;
             }
         }
