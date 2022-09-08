@@ -61,6 +61,7 @@
         color: #303132;
         font-weight: 300;
         transition: color 0.3s;
+        white-space: nowrap;
 
         &:hover {
             color: #000;
