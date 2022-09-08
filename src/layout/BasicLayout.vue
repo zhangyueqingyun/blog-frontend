@@ -18,7 +18,9 @@ import Profile from '../components/Profile.vue'
         </div>
     </div>
     <div class="footer">
-        @Copyright： 张玥卿云
+        <div class="item">@Copyright - 张玥卿云</div>
+        <!-- <div class="item">/</div> -->
+        <div class="item">备案号 - 陕ICP备2022010516</div>
     </div>
 </template>
 
@@ -104,14 +106,19 @@ import Profile from '../components/Profile.vue'
         position: fixed;
         bottom: 0;
         width: 100vw;
-        display: flex;
-        justify-content: center;
         border-top: 1px solid #e0e1e2;
         padding: 8px;
         font-size: 13px;
         color: #999;
         font-weight: 300;
         background: #fafbfc;
+        display: flex;
+        justify-content: center;
+        .item {
+            display: flex;
+            justify-content: center;
+            margin: 0 10px;
+        }
     }
 
     @media screen and (max-width:900px) { 
