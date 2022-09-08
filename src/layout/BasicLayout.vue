@@ -51,7 +51,8 @@ import Profile from '../components/Profile.vue'
             line-height: 48px;
             display: flex;
             min-width: 600px;
-            overflow-y: auto;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
     }
     .bottom {

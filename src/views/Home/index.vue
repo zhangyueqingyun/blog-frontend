@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <loading :visible="!data.categoriedBlogs"/>
+    <loading :visible="!data.categoriedBlogs || !data.navs"/>
     <profile-mobile></profile-mobile>
     <basic-layout>
         <template v-slot:nav>

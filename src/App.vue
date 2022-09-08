@@ -3,7 +3,7 @@
   import NavBar from '@/components/NavBar.vue'
   import {getProfile, getSigns} from './services/global'
   
-  const globalState = reactive({
+  const globalState: any = reactive({
     profile: {},
     signs: []
   })
@@ -21,6 +21,7 @@
 </script>
 
 <template>
+  <loading :visible="!globalState.profile?.name"/>
   <nav-bar></nav-bar>
   <router-view></router-view>
 </template>
