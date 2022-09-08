@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import BlogCard from '@/components/BlogCard.vue';
     import Module from '@/components/Module.vue';
-    
+    import Empty from '@/components/Empty.vue';
     const props: any = defineProps({
         categoriedBlogs: []
     })
@@ -20,4 +20,5 @@
         </template>
         </module>
     </div>
+    <empty v-if="props.categories && !props.categories.length" />
 </template>

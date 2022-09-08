@@ -3,6 +3,8 @@
     import CategoryCard from '@/components/CategoryCard.vue';
     import BlogCard from '@/components/BlogCard.vue';
     import Spin from '@/components/Spin.vue';
+    import Empty from '@/components/Empty.vue'
+    
     
     import { getCategoriesAndBlogs } from '@/services/home';
     import { onBeforeMount, reactive, watch, computed } from 'vue';
@@ -54,6 +56,7 @@
                     </template>
                 </module>
             </div>
+            <empty v-if="data.blogs && data.categories && !data.categories.length && !data.blogs.length" />
         </template>
     </spin>
 </template>

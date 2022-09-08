@@ -2,7 +2,8 @@
     import Module from '@/components/Module.vue';
     import CategoryCard from '@/components/CategoryCard.vue';
     import BlogCard from '@/components/BlogCard.vue';
-    import Loading from '@/components/Loading.vue';
+    import Spin from '@/components/Spin.vue';
+    import Empty from '@/components/Empty.vue';
     import { getCategoriesAndBlogs } from '@/services/home';
 
     import { onBeforeMount, reactive, watch } from 'vue';
@@ -26,31 +27,35 @@
 </script>
 
 <template>
-    <loading :visible="!data?.blogs || !data?.categories"/>
-    <div class="content">
-        <module v-if="data?.categories?.length" :key="`cate-${route.params.id}`">
-            <template v-slot:top>目录</template>
-            <template v-slot:default>
-                <div class="categories">
-                    <category-card 
-                        v-for="category of data.categories"
-                        :key="category.id"
-                        :category="category"
-                    />
-                </div>
-            </template>
-        </module>
-        <module v-if="data?.blogs?.length" :key="`blog-${route.params.id}`">
-            <template v-slot:top>文章</template>
-            <template v-slot:default>        
-                <blog-card 
-                    v-for="blog of data.blogs"
-                    :key="blog.id"
-                    :blog="blog"
-                />
-            </template>
-        </module>
-    </div>
+    <spin :visible="!data?.blogs || !data?.categories">
+        <template v-slot>
+            <empty v-if="data.blogs && data.categories && !data.blogs.length && !data.categories.length" />
+            <div class="content">
+                <module v-if="data?.categories?.length" :key="`cate-${route.params.id}`">
+                    <template v-slot:top>目录</template>
+                    <template v-slot:default>
+                        <div class="categories">
+                            <category-card 
+                                v-for="category of data.categories"
+                                :key="category.id"
+                                :category="category"
+                            />
+                        </div>
+                    </template>
+                </module>
+                <module v-if="data?.blogs?.length" :key="`blog-${route.params.id}`">
+                    <template v-slot:top>文章</template>
+                    <template v-slot:default>        
+                        <blog-card 
+                            v-for="blog of data.blogs"
+                            :key="blog.id"
+                            :blog="blog"
+                        />
+                    </template>
+                </module>
+            </div>
+        </template>
+    </spin>
 </template>
 
 <style lang="scss" scoped>
