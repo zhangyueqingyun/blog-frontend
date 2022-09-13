@@ -33,31 +33,31 @@
             padding: 0 35px;
             .info {
                 display: flex;
-                padding: 20px 0;
+                padding: 22px 0;
                 align-items: center;
                 border-bottom: 2px solid white;
                 .avatar {
                     border-radius: 50%;
                     margin-right: 12px;
                     img {
-                        width: 75px;
-                        height: 75px;
+                        width: 80px;
+                        height: 80px;
                     }
                 }
 
                 .name {
-                    font-size: 25px;
+                    font-size: 28px;
                     font-weight: 500;
                 }
 
                 .pick-name {
-                    font-size: 22px;
+                    font-size: 25px;
                     font-weight: 300;
                 }
             }
             .feeling {
                 padding: 15px 0;
-                font-size: 20px;
+                font-size: 24px;
                 color: #dd9999;
                 font-weight: 500;
             }

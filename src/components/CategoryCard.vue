@@ -60,14 +60,14 @@
     }
     @media screen and (max-width:900px) { 
         .category {
-            padding: 22px 18px;
-            font-size: 22px;
+            padding: 22px 20px;
+            font-size: 25px;
             .icon-box {
                 margin-top: -2px;
                 border-radius: 50%;
                 background: #fff;
-                width:22px;
-                height: 22px;
+                width:26px;
+                height: 26px;
             }
         }
     }

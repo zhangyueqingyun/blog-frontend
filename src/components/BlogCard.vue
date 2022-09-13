@@ -151,7 +151,7 @@
 @media screen and (max-width:900px) { 
     .card {        
         border-radius: 8px;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         &-header {
             display: flex;
             justify-content: space-between;
@@ -161,7 +161,7 @@
             padding: 20px;
             .title {
                 color: #000;
-                font-size: 22px;
+                font-size: 28px;
                 font-weight: 500;
                 cursor: pointer;
                 transition: color 0.3s;
@@ -174,8 +174,8 @@
                 display: flex;
                 .sign {
                     margin-left: 5px;
-                    padding: 3px 15px;
-                    font-size: 16px;
+                    padding: 10px 15px;
+                    font-size: 20px;
                     font-weight: 500;
                     white-space: no-wrap;
                     border: 1px solid #fff;
@@ -186,8 +186,8 @@
         }
         .content {
             color: black;
-            padding: 20px 20px;
-            font-size: 22px;
+            padding: 24px 20px;
+            font-size: 24px;
             color-scheme: light;
             flex-grow: 1;
             background: #eff0f1;
@@ -210,7 +210,7 @@
                     margin-left: 5px;
                 }
                 .text {
-                    font-size: 18px;
+                    font-size: 22px;
                     color: rgb(87, 96, 106);
                     line-height: 18px;
                     margin-left: 3px;
@@ -222,7 +222,7 @@
             color: #999;
             margin-left: 5px;
             padding: 0 7px;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 500;
             line-height: 18px;
             white-space: no-wrap;

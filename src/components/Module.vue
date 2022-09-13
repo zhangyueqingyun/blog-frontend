@@ -36,11 +36,11 @@
                 
             @media screen and (max-width:900px) { 
                 .title {
-                    font-size: 20px;
+                    font-size: 22px;
                     color: #24292f;
                     font-weight: 400;
                     border-bottom: 2px solid #eecccc;
-                    padding: 3px 7px;
+                    padding: 4px 7px;
                     border-radius: 10px;
                 }
             }
