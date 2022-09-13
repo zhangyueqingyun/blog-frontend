@@ -129,7 +129,7 @@
     @media screen and (max-width:900px) { 
         .blog {
             .title {
-                font-size: 25px;
+                font-size: 28px;
                 padding: 22px;
                 background-color: #f7f8f9;
                 border: 1px solid #f7f8f9;
@@ -142,15 +142,37 @@
                 border: 1px solid #f7f8f9;
                 padding: 20px 20px 80px 20px;
                 p {
-                    line-height: 33px;
+                    line-height: 40px;
+                    font-size: 27px;
                 }
+                h1 {
+                    font-size: 40px;
+                }
+
+                h2 {
+                    font-size: 36px;
+                }
+
+                h3 {
+                    font-size: 32px;
+                }
+
+                h4 {
+                    font-size: 30px;
+                }
+
+                h5 {
+                    font-size: 28px;
+                }
+
                 li {
-                    line-height: 33px;
+                    font-size: 27px;
+                    line-height: 40px;
                 }
                 code {
                     font-weight: 600;
-                    font-size: 22px;
-                    line-height: 28px;
+                    font-size: 25px;
+                    line-height: 40px;
                     font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
                 }
             }

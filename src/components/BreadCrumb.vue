@@ -90,9 +90,9 @@
     
     @media screen and (max-width:900px) { 
         .container {
-
-            padding: 10px 0;
+            font-size: 26px;
             .item {
+                padding: 24px 3px;
                 display: flex;
                 align-items: center;
             }

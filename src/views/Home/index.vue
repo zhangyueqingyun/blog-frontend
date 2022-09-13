@@ -77,9 +77,9 @@
     @media screen and (max-width:900px) { 
        .item {
             display: flex;
-            font-size: 22px;
+            font-size: 26px;
             align-items: center;
-            padding: 15px 3px;
+            padding: 24px 3px;
             font-weight: 300;
        }
        .active {

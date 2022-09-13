@@ -72,13 +72,14 @@
   @media screen and (max-width:900px) { 
     .nav {
       
-      padding: 30px 25px;
+      padding: 40px 25px;
       .left-bar {
         .item {
-          font-size: 21px;
+          font-size: 28px;
+          margin-right: 8px;
         }
         .go-home {
-          font-size: 23px;
+          font-size: 32px;
         }
       }
     }
