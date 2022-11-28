@@ -86,13 +86,14 @@
                 width:100%;
                 border-left: 1px solid #dfd0d0;
                 border-collapse: collapse;
-                table-layout: fixed;
+                // table-layout: fixed;
                 word-wrap: break-word;
                 word-break: break-all;
             }
             th {
                 background-color: #dfd0d0;
                 padding: 5px;
+                min-width: 150px;
             }
             td {
                 padding: 5px;
@@ -159,7 +160,7 @@
                 justify-content: space-between;
                 align-items: center;
             }
-    
+
             .content {
                 border: 1px solid #f7f8f9;
                 padding: 20px 20px 80px 20px;
@@ -169,6 +170,16 @@
                 }
                 table {
                     font-size: 27px;
+                }
+
+                
+                th {
+                    padding: 15px;
+                    min-width: 250px;
+                }
+
+                td {
+                    padding: 15px;
                 }
                 h1 {
                     font-size: 40px;
