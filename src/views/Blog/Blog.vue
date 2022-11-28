@@ -82,6 +82,21 @@
             li::marker {
                 color: #cd5c5c;
             }
+            table {
+                width:100%;
+                border-left: 1px solid #dfd0d0;
+                border-collapse: collapse;
+            }
+            th {
+                background-color: #dfd0d0;
+                padding: 5px;
+            }
+            td {
+                padding: 5px;
+                border-bottom: 1px solid #dfd0d0;
+                border-right: 1px solid #dfd0d0 ;
+                font-weight: 500;
+            }
             pre {
                 border-radius: 6px;
                 // background:rgba(254,250,251);
@@ -109,7 +124,7 @@
                     color: #555;
                 }
                 &-comment {
-                    color:  #cd5c5c;
+                    color:  #5f9483;
                 }
                 &-keyword {
                     color: #cd5c5c;
@@ -122,6 +137,9 @@
                 }
                 &-property {
                     color: #cd5c5c;
+                }
+                table {
+                    width: 100%;
                 }
             }
         }
@@ -138,11 +156,15 @@
                 justify-content: space-between;
                 align-items: center;
             }
+    
             .content {
                 border: 1px solid #f7f8f9;
                 padding: 20px 20px 80px 20px;
                 p {
                     line-height: 40px;
+                    font-size: 27px;
+                }
+                table {
                     font-size: 27px;
                 }
                 h1 {
