@@ -86,6 +86,9 @@
                 width:100%;
                 border-left: 1px solid #dfd0d0;
                 border-collapse: collapse;
+                table-layout: fixed;
+                word-wrap: break-word;
+                word-break: break-all;
             }
             th {
                 background-color: #dfd0d0;
