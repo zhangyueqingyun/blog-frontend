@@ -16,42 +16,53 @@
     </div>
     <div class="footer">
         <div class="signs">
-            <div class="sign" v-show="hasSign">      
-                <div class="circle" :style="{background: sign?.color}"></div>
+            <!-- <div class="sign" v-show="hasSign">      
+                <div class="circle" :style="signStyle"></div>
                 <div class="text">
                     {{sign?.name || '未分类'}}
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="date">发布时间：{{format(blog.datetime)}}</div>
     </div>
 </template>
 
 <script setup lang="ts">
-    import { inject, computed } from 'vue';
+    // import type { Ref, ComputedRef } from 'vue';
+    // import { inject, computed } from 'vue';
     import { format } from '../utils/date';
-    
+
     const { blog = {} } = defineProps({
         blog: Object
     });
 
-    const signs: any = inject('signs');
+    // interface Sign {
+    //     signId?: String,
+    //     name?: String,
+    //     color?: String | Number | undefined
+    // }
+
+    // const signs: Sign[] | undefined = inject('signs');
 
     function jumpToBlog() {
         window.location.href = `/zblog/blog/${blog.id}`
     }
 
-    function findSign() {
-        return signs.value.find(({id}: any) => (id === blog.signId))
-    }
+    // function findSign() {
+    //     return signs?.find(({id}: any) => (id === blog.signId));
+    // }
 
-    const sign: any = computed(findSign);
-    const hasSign = computed(() => (!!sign?.name));
+    // const sign: ComputedRef<Sign | undefined>   = computed(findSign);
+    // const hasSign: ComputedRef<Boolean>         = computed(() => (!!sign?.value?.name));
+    // const signStyle: any = computed(() => ({
+    //     background: sign?.value?.color || 'transparent'
+    // }))
 
     defineExpose({
         blog,
-        sign,
-        hasSign,
+        // sign,
+        // hasSign,
+        // signStyle,
         jumpToBlog
     });
 </script>
