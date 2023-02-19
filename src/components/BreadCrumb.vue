@@ -1,51 +1,68 @@
 <script setup lang="ts">
+    import { onBeforeMount, ref, watch, computed } from 'vue';
     import { useRoute } from 'vue-router'
     import { getPathById } from '@/services/path';
-    import { onBeforeMount, reactive, watch } from 'vue';
-    
-    const route: any = useRoute();
 
-    const state: any = reactive({
-        path: undefined,
-        current: {}
+    const frontPaths = ref(undefined);
+    const endPath = ref({
+        name: ''
     });
     
-    async function fetchPath(){
-        if(route.name !== 'category' && route.name !== 'blog') {
+    const route: any = useRoute();
+    const isCategory = computed(() => route.name === 'category');
+    
+    async function setPath(){
+        const currentName = route.name;
+        
+        if(!/(category|blog)/.test(currentName)) {
             stop();
             return;
         }
-        const path = await getPathById(route.name, route.params.id);
-        const {length} = path;
+
+        const currentPath = await getPathById(currentName, route.params.id);
+        const { length } = currentPath;
         
-        state.current = path[length - 1];
-        state.path = path.slice(0, length - 1);
+        endPath.value = currentPath[length - 1];
+        frontPaths.value = currentPath.slice(0, length - 1);
     }
 
-    onBeforeMount(fetchPath);
-    const stop = watch(() => route.params, fetchPath);
+    onBeforeMount(setPath);
+
+    const stop = watch(() => route.params, setPath);
+    
     watch(() => route.name, stop);
+
+    defineExpose({
+        frontPaths,
+        endPath,
+        isCategory
+    })
 </script>
 
 <template>
-    <div class="container" v-if="state.path">
+    <div class="container" v-if="frontPaths">
         <div class="item cate">
             <router-link  to="/">
                 首页
             </router-link>
         </div>
         <div class="divide">/</div>
-        <template v-for="{id, name} of state.path" :key="id">
-                <div class="item cate">
-                    
-            <router-link :to="`/category/${id}`">
+        <template v-for="{id, name} of frontPaths" :key="id">
+            <div class="item cate">      
+                <router-link :to="`/category/${id}`">
                     {{name}}
-            </router-link> 
-                </div>
-            <div class="divide">/</div>
+                </router-link> 
+            </div>
+            <div class="divide">
+                /
+            </div>
         </template>
-        <div class="item">{{state.current.name}}</div>
-        <div v-if="route.name == 'category'" class="divide">/</div>
+        <div class="item">
+            {{endPath.name}}
+        </div>
+        <div v-if="isCategory" class="divide">
+            /
+        </div>
     </div>
 </template>
 

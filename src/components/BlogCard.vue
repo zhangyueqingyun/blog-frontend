@@ -1,18 +1,29 @@
 <script setup lang="ts">
-    import {format} from '../utils/date';
-    import {inject, computed} from 'vue';
+    import { format } from '../utils/date';
+    import { inject, computed } from 'vue';
     
-    const signs: any = inject('signs');
-
-    const {blog = {}} = defineProps({
+    const { blog = {} } = defineProps({
         blog: Object
     });
 
-    function click() {
+    const signs: any = inject('signs');
+
+    function jumpToBlog() {
         window.location.href = `/zblog/blog/${blog.id}`
     }
 
-    const sign = computed(() => signs.value.find((sign: any) => sign.id === blog.signId));
+    function findSign() {
+        return signs.value.find(({id}: any) => (id === blog.signId))
+    }
+
+    const sign = computed(findSign);
+
+    defineExpose({
+        blog,
+        sign,
+        signs,
+        jumpToBlog,
+    });
 </script>
 
 <template>
@@ -26,7 +37,7 @@
     </div>
     <div class="date">发布时间：{{format(blog.datetime)}}</div>
 </div> -->
-<div class="card" @click="click">
+<div class="card" @click="jumpToBlog">
     <div class="card-header">
         <div class="title">{{blog?.title}}</div>
         <div class="signs">
